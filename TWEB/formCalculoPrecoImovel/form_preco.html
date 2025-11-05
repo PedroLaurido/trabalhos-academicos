@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário | Preço</title>
+    <link rel="stylesheet" type="text/css" href="./estilos-form_preco.css"/>
+    <link rel="stylesheet" type="text/css" href="./fontawesome/css/all.css"/>
+</head>
+<body>
+    <div class="calculo_preco">
+        <img src="./imagens/preco_casa.png"><p></p>
+        <div class="btn_calculo">
+            <span class="texto_calc1">Calcule aqui o preço</span><br>
+            <span class="texto_calc2">do seu imóvel</span><br>
+            <span class="seta_para-baixo"><i class="fas fa-arrow-down"></i></span>
+        </div>
+    </div>
+
+    <div class="box">
+        <fieldset>
+            <div class="titulo">Informações do imóvel</div>
+            
+            <p><b>Tipologia:</b>
+            <input type="radio" id="tipo-0" class="tip" name="tipo" value="0" required>
+            <label for="t0">T0</label>  
+            
+            <input type="radio" id="tipo-1" class="tip" name="tipo" value="1" required>
+            <label for="t1">T1</label>
+            
+            <input type="radio" id="tipo-2" class="tip" name="tipo" value="2" required>
+            <label for="t2">T2</label>
+            
+            <input type="radio" id="tipo-3" class="tip" name="tipo" value="3" required>
+            <label for="t3">T3</label>
+            
+            <input type="radio" id="tipo-4" class="tip" name="tipo" value="4" required>
+            <label for="t4">T4</label>
+            <br>
+            <input type="radio" id="tipo-5" class="tip" name="tipo" value="5" required>
+            <label for="t5">T5</label>
+            
+            <input type="radio" id="tipo-6" class="tip" name="tipo" value="6" required>
+            <label for="t6">T6</label>
+            
+            <br><br>
+    
+            <label for="area-util-im"><b>Área útil (m<sup>2</sup>):</b></label>
+                <input type="number" id="area-util-im" placeholder="Metros" min="0" max="100000" required>
+            <br><br>
+
+            <label for="idade_im"><b>Idade do Imóvel:</b></label>
+                <input type="number" id="idade_im" placeholder="Anos" min="0" max="100000" required>
+            <br>
+
+            <p><b>Garagem?</b>
+            <input type="radio"  id="garagem_sim" name="garagem" value="Sim" required>
+            <label for="garagem_sim">Sim</label>
+            <input type="radio"  id="garagem_nao" name="garagem" value="Nao" required>
+            <label for="garagem_nao">Nao</label>
+
+            <p><b>Proximidade a Transportes Públicos?</b><br>
+            <input type="radio" id="transportes_sim" name="transportes" value="Sim">
+            <label for="transportes_sim">Sim</label>
+            <input type="radio" id="transportes_nao" name="transportes" value="Não" required>
+            <label for="transportes_nao">Nao</label>
+            <br><br>
+            <button class="btn_calcular" id="calc_button" required onclick="Results()">Calcular Preço</button>   
+            
+        </fieldset>
+</div>       
+
+    <main id="cartoes" class="seccoes">
+        <section id="parte_seccao-1" class="parte zona1">
+            <h3>Zona 1 </h3>
+            <div class=traco></div>
+            <span id="zona_1"></span>
+            <div class="parte_seccao_zona1" >
+                <br>
+                <p>Tipologia: <span id="tipologia_1"></span></p><br>
+                <p>Preço/m<sup>2</sup>:<span class="textTip3"> 1200€/m<sup>2</sup></span></p><br>
+                <p>Área: <span id="area-util-im_1"></span></p><p>     </p><br>
+                <p>Garagem: <span id="garagem_1"></span></p>  <br>
+                <p>Proximidade de Transportes Públicos: <span id="transporte_1"></span></p><br>
+                <br><br>
+                <button class="calcular_finaciamento" id="btn_financiamento1" onclick="Janela()">Financiamento</button>
+            </div>
+        
+        </section>
+        <section id="parte_seccao-2" class="parte zona2">
+            <h3>Zona 2</h3>
+            <div class=traco></div>
+            <span id="zona_2"></span>
+            <div class="parte_seccao_zona2" >
+                <br>
+                <p>Tipologia: <span id="tipologia_2"></span></p>  <br>
+                <p>Preço/m<sup>2</sup>:<span class="textTip3"> 2000€/m<sup>2</sup></span></p><br>
+                <p>Área: <span id="area-util-im_2"></span></p>  <br>
+                <p>Garagem: <span id="garagem_2"></span></p>  <br>
+                <p>Proximidade de Transportes Públicos: <span id="transporte_2"></span></p><br>
+                <br><br>
+                <button class="calcular_finaciamento" id="btn_financiamento2" onclick="Janela2()">Financiamento</button>
+            </div>
+        </section>
+        <section id="parte_seccao-3" class="parte zona3">
+            <h3>Zona 3</h3>
+            <div class=traco></div>
+            <span id="zona_3"></span>
+            <div class="parte_seccao_zona3" >
+                <br>
+                <p>Tipologia: <span id="tipologia_3"></span></p><br>
+                <p>Preço/m<sup>2</sup>:<span class="textTip3"> 2500€/m<sup>2</sup></span></p><br>
+                <p>Área: <span id="area-util-im_3"></span></p><p>     </p><br>
+                <p>Garagem: <span id="garagem_3"></span></p>  <br>
+                <p>Proximidade de Transportes Públicos: <span id="transporte_3"></span></p><br>
+                <br><br>
+                <button class="calcular_finaciamento" id="btn_financiamento3" onclick="Janela3()" >Financiamento </button>
+            </div>
+         
+        </section>
+        
+    </main>
+
+    <div id="parte_financiamento">
+        <div class="caixa_financiamento">
+           
+            <button class="close" id="fechar_parte_financiamento" onclick="CloseFinanc()">x</button>
+            <br><br><br><br>
+            <span id="preco_zona1" class="valor_imovel"></span>
+            <br><br><br><br>
+            <label for="emprestimo"><b>Empréstimo:</b></label>
+            <input type="number" id="emprestimo" placeholder="Empréstimo" min="0" max="9999999999999" required>
+            <br><br><br>
+            <label for="entrada_inicial"><b>Entrada Inicial:</b></label>
+            <input type="number" id="entrada_inicial" placeholder="Entrada Inicial" min="0" max="9999999999999" required>
+            <br><br><br>
+            <label for="prazo"><b>Prazo(anos):</b></label>
+            <input type="number" id="prazo" placeholder="Prazo" min="0" max="9999999999999" required>
+
+            <br><br><br>
+            <button class="btn_calcular_financiamento" id="calcular_financiamento" onclick="financ_calc()">Calcular Financiamento</button>
+        
+        </div>
+
+
+        <br><br><br><br>
+        
+        <br><br>
+        
+        <div class="grid-cartoes">
+            
+            <div class="cartao_santander">
+                <div id="img_santander">
+                    <img src="./imagens/santander.png">
+                </div>
+                <p class="titulo_santander">Santander Crédito habitação, Taxa variável Santander</p>
+                <div id="cartao_informacoes" >
+                
+                    <div class="spread">
+                    
+                        <p class="info_spread" id="valor_spread1"></p>
+                        <h3 class="apartir_spread">Spread desde</h3>
+                    </div>
+                    
+                    <div class="taxa">
+                        <span class="info_spread" id="valor_taxa1"></span>
+                        <h3 class="apartir_spread">Juros</h3> 
+                    </div>
+
+                    <div class="valor">
+                        <span class="info_spread" id="valor_final_mensal1"></span>
+                        <h3 class="apartir_spread">€/Mês</h3> 
+                    </div>
+
+                    <div class="oferta">
+                        <span class="info_spread1">Ver oferta</span> 
+                    </div>
+
+                </div>
+    
+            </div>
+            <div class="cartao_BIC">
+                <div id="img_BIC">
+                    <img src="./imagens/Logo_Euro_BIC.png">
+                </div>
+                
+                <p class="titulo_BIC">Euro BIC Crédito habitação, Taxa variável Euro BIC</p>
+                <div id="cartao_informacoes" >
+                
+                    <div class="spread">                        
+                        <p class="info_spread" id="valor_spread2"></p>
+                        <h3 class="apartir_spread">Spread desde</h3>
+                    </div>
+                    
+                    <div class="taxa">
+                        <span class="info_spread" id="valor_taxa2"></span>
+                        <h3 class="apartir_spread">Juros</h3> 
+                    </div>
+
+                    <div class="valor">
+                        <span class="info_spread" id="valor_final_mensal2"></span>
+                        <h3 class="apartir_spread">€/Mês</h3> 
+                    </div>
+
+                    <div class="oferta">
+                        <span class="info_spread1">Ver oferta</span> 
+                    </div>
+
+                </div>
+            </div>
+            <div class="cartao_BPI">
+                <div id="img_BPI">
+                    <img src="./imagens/BPI_logo.png">
+                </div>
+                
+                <p class="titulo_BPI">Banco BPI Crédito habitação, Taxa variável Banco BPI</p>
+                <div id="cartao_informacoes" >
+                
+                    <div class="spread">                        
+                        <p class="info_spread" id="valor_spread3"></p>
+                        <h3 class="apartir_spread">Spread desde</h3>
+                    </div>
+                    
+                    <div class="taxa">
+                        <span class="info_spread" id="valor_taxa3"></span>
+                        <h3 class="apartir_spread">Juros</h3> 
+                    </div>
+
+                    <div class="valor">
+                        <span class="info_spread" id="valor_final_mensal3"></span>
+                        <h3 class="apartir_spread">€/Mês</h3> 
+                    </div>
+
+                    <div class="oferta">
+                        <span class="info_spread1">Ver oferta</span> 
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js-form_preco.js"></script>
+</body>
+</html>

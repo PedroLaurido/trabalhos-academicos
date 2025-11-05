@@ -1,0 +1,1152 @@
+a:hover {
+    opacity: 0.7;
+  }
+
+  nav {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: system-ui, -apple-system, Helvetica, Arial, sans-serif;
+    background: #ffffff;
+    height: 10vh;
+  }
+  .far.fa-user{
+      padding: 0px;
+    }
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif; 
+    box-sizing: border-box;
+}
+
+*:before, *:after{
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Helvetica Neue",Arial,sans-serif;
+    color: #27190a;
+    font-size: 90%;
+    font-weight: 500;
+    margin: 0;
+    min-height: 100vh;
+    overflow-x: hidden;
+
+}
+
+/* --------------------------------------------------------------*/
+
+ul
+{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: white;
+}
+
+.navbar li 
+{
+  float: left;
+}
+
+.navbar li a
+{
+  display: block;
+  font-size: 14px;
+  line-height: 20px;
+  color: #585858;
+  text-align: center;
+  padding: 20px 8px;
+  text-decoration: none;
+  background-color: transparent;
+  text-shadow: none;
+}
+
+.navbar li a:hover 
+{
+  background-color: #f0f0f0;
+  color: #585858;
+}
+
+.logo_imovirtual
+{
+  padding: 0px;
+  width: 180px;
+  height: 60px;
+  margin-right: 20px;
+}
+
+.navbar li a.btn-adicionar_anuncio
+{
+  background: #fff;
+  margin: 10px 0 0 5px;
+  padding: 12px 24px;
+  border-radius: 2px;
+  font-size: 14px;
+  font-weight: 600;
+  white-space: nowrap;
+  color: #21a4b8;
+  border: 1px solid currentColor;
+  text-align: center;
+}
+
+.btn-adicionar_anuncio:hover
+{
+  color: #21a4b8;
+  border: 1px solid currentColor;
+  background-color: rgba(33,164,184,0.1);
+}
+
+.undernav-text 
+{
+  color: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+/* -----------------------------------undernav-------------------- */
+
+.container_undernav{
+  margin: 0px 0px 0px 0px;
+  width: 100%;
+  min-height: 451px;
+  object-fit: cover;
+  background-position: center;
+  position: relative;
+  background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0) 70%) 0% 0%/cover,url(https://statics.imovirtual.com/static/imovirtualpt/packed/img/2f507828a0a52ee89b7be03c28161c46b9.jpg) no-repeat center;
+  background-size: cover;
+
+}
+
+.botao_ajuda
+{
+list-style: none;
+position: fixed;
+border: none;
+height: 32px;
+top: 143px;
+right: -25px;
+padding: 0 20px;
+background-color: #C33A32;
+border-radius: 0 0 10px 10px;
+box-shadow: 0px 0px 7px 0px #222;
+transform: rotate(90deg);
+font-size: 15px;
+text-shadow: 1px 1px 1px rgb(48 48 48 / 80%);
+color: #fff;
+text-align: center;
+}
+
+.caixas_cima
+{
+display: flex;
+position: relative;
+width: 1050px;
+margin: auto;
+}
+
+.pesquisar{
+z-index: 2;
+background-color: rgb(255, 255, 255);
+height: 50px;
+width: 120px;
+margin-top: 185px;
+color:#21a4b8;
+padding: 15px 30px 10px;
+cursor:pointer;
+
+}
+
+.empreendimentos{
+z-index: 2;
+background-color: #e0e0e0;
+height: 45px;
+width: 140px;
+margin-top: 190px;
+color: black;
+padding: 11px 10px;
+cursor:pointer;
+
+}
+
+.box_pesquisa{
+  z-index: 2;
+  height: 150px;
+  width: 1050px;
+  background-color: white;
+  margin:auto;
+}
+
+.apart{
+margin:20px 20px;
+background-color: #ffffff; 
+border: solid 1px rgb(175, 172, 172);
+color: rgb(148, 143, 143);
+padding: 13px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+
+.comprar
+{
+margin:20px -15px;
+background-color: #ffffff; 
+border: solid 1px rgb(175, 172, 172);
+color: rgb(148, 143, 143);
+padding: 13px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+}
+
+.localizacao
+{
+margin: 20px 20px;
+background-color: #ffffff;
+border: solid 1px rgb(175, 172, 172);
+color: rgb(148, 143, 143);
+padding: 9px 0px;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+text-align: left;
+padding-right: 190px;
+}
+
+
+.fas.fa-search{
+padding: 5px;
+}
+
+.fas.fa-map-marker-alt{
+padding: 5px;
+}
+
+.botao_pesquisa{
+background-color: rgb(31, 154, 173);
+border: none;
+color: white;
+padding: 12px 32px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 16px;
+height: 48px;
+width: 180px;
+}
+
+.preco{
+margin: 20px 20px;
+background-color: #ffffff;
+border: solid 1px rgb(175, 172, 172);
+color: rgb(148, 143, 143);
+padding: 10px 32px 10px 40px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+border-radius: 17px;
+margin-top: -10px;
+
+}
+
+.texto_undernav {
+  position: absolute; 
+  top: 130px; 
+  left: 0;
+  text-align: center; 
+  width: 100%;
+  color:white; 
+  text-shadow: 1px 2px 1px rgb(0 0 0 / 60%);
+  font-size: 35px;
+}
+
+.container_undernav{
+  padding: 18px 5px 5px 5px;
+
+}
+
+/* -----------------------------------anuncios---------------------------------------- */
+
+.anuncios_text h2{
+  text-align: center;
+  font-size: 25px;
+  margin-top:0;
+  margin-bottom: 20px;
+  color:black;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+.grid_imagens{
+  max-width: 1000px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  column-gap: 3px;
+  row-gap: 3px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: auto;
+  position: relative;
+}
+
+.grid_imagens img{
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.descricao
+{
+  position: absolute;
+  bottom: 2px;
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  text-align: left;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgb(48 48 48 / 35%);
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  left: 5px;
+}
+.descricao h3
+{
+  font-size: 12px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.descricao p
+{
+  font-size: 10px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+#d1{
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 1/2; 
+
+
+}
+#d2{
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 1/2; 
+}
+#d3{
+  position: relative;
+  grid-column: 3/4;
+  grid-row: 1/2; 
+}
+#d4{
+  position: relative;
+  grid-column: 1/2;
+  grid-row: 2/3; 
+}
+#d5{
+  position: relative;
+  grid-column: 2/3;
+  grid-row: 2/3; 
+}
+#d6{
+  position: relative;
+  grid-column: 3/4;
+  grid-row: 2/3; 
+}
+
+
+
+/* Botão Ver Tudo ***/
+
+.caixa_botao{
+  max-width: 1920px;
+  width: auto;
+  height: 50px;
+  text-align: center;
+}
+
+.btn_ver_tudo{
+  background-color: rgb(189, 59, 59);
+  border: none;
+  color:white;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 17px;
+  cursor: pointer;
+  width: 95px;
+  margin: 10px auto;
+  height: 40px;
+}
+
+.btn-ver_tudo:hover{
+  background-color: rgb(201, 74, 74);;
+}
+
+/* -----------------------------------------bloco_botoes---------------------------------------- */
+
+.box_principal
+{
+    padding:40px 0;
+    background: #dedede;
+    margin-top: 40px;
+}
+
+.box_text h2{
+    text-align: center;
+    font-size: 25px;
+    margin-top:0;
+    margin-bottom: 20px;
+    color:black;
+    padding-top: 20px;
+    padding-bottom: 0;
+}
+
+/* box dentro das principal das bolas */
+.box_principal{
+  display: flex; /* O layout flex permite que os elementos responsivos dentro de um contêiner sejam organizados automaticamente, dependendo do tamanho da tela */
+  align-items: center;
+  flex-direction: column; /*os elementos são direcionados em forma de coluna*/
+}
+
+
+.caixa_bolas
+{
+    position: relative; /*o artigo é colocado em relação a posição definida pela div box_principal*/
+    width: auto;
+    max-width: 55%;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex; /* O layout flex permite que os elementos responsivos dentro de um contêiner sejam organizados automaticamente, dependendo do tamanho da tela*/
+    flex-wrap: wrap;
+}
+.circulo {
+    width: 15vh;
+    height: auto;
+    margin: 0vw 3vw;
+  }
+
+.divcirculo_imagem{
+    position: relative;
+    border-radius: 50%;
+    width: 100%;
+    height: auto;
+    padding-top: 100%;
+    background: white;
+    margin-top: 20px;
+    border: 2px solid rgb(189, 189, 189);
+  }
+
+  .divcirculo_imagem i
+  {
+    position: absolute; /*serve para colocar div num local e esta não sair do lugar definido*/
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%); /*serve para rodar o icon da imagem 50% no eixo Y e X para o lado negativo */
+    color: #8F8F8F;
+    font-size: 50px;
+  }
+
+  .circulo h4
+  {
+      font-size: 15px;
+      color:gray;
+      margin: 10px 0px 0px 0px;
+      text-align: center;
+      text-transform: lowercase;
+  }
+  .divcirculo_imagem .divcirculohover{
+    position: absolute; /*serve para colocar div num local e esta não sair do lugar definido*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+  }
+  .divcirculo_imagem:hover .divcirculohover
+  {
+    position: absolute; /*serve para colocar div num local e esta não sair do lugar definido*/
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 1;
+  }
+
+  .divcirculohover:hover 
+  {
+    font-size: 10px;
+    display: block;
+  }
+
+  .divcirculo_imagem:hover
+  {
+    background-color: rgb(189, 59, 59);
+
+  }
+
+  .divcirculo_imagem:hover i
+  {
+    visibility: hidden;
+  }
+
+  .divcirculo_imagem:hover .divcirculohover a
+  {
+    color: white;
+    text-decoration: underline;
+    width: 140px;
+    height: 0;
+    padding-top: calc(170px -2px);
+    border-radius: 50%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .divcirculo_imagem:hover .divcirculohover a
+  {
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 10px;
+    cursor: pointer;
+  }
+
+/* ----------------------------------------------blog------------------------------------------- */
+
+.main_box_blogs{
+  width: 100%;  /*definir o comprimento da div em 100%*/
+  display: grid;  /*cria um display em grelha*/
+  grid-template-rows:1fr 1fr 1fr;  /*serve para a grelha colocar os artigos em 3 linhas separadas entre elas*/
+  grid-auto-rows: minmax(auto, auto); /*definir o intervalo de tamanho de cada bloco da grelha*/
+  height: 630px;
+}
+
+
+
+
+#artigo1{
+  position: relative; /*o artigo é colocado em relação a posição definida pela div main_box_blogs*/
+  text-align: center;
+  float:left; 
+  width:33.3%;
+  height:330px;
+  background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 60%) 80%) 0% 0% / cover, url(https://clinicaportal.com.br/wp-content/uploads/2021/04/8-dicas-para-melhorar-a-qualidade-de-vida-do-idoso-com-Alzheimer-1024x723.jpg) center center no-repeat;
+  cursor: pointer;
+
+}
+
+#artigo2{
+  position: relative; /*o artigo é colocado em relação a posição definida pela div main_box_blogs*/
+  text-align: center;
+  float:left; 
+  width:33.3%;
+  height:330px;
+  background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 60%) 80%) 0% 0% / cover, url(https://blog.meuliving.com.br/wp-content/uploads/2017/11/145316-manual-para-quem-vai-morar-sozinho-tudo-o-que-voce-precisa-saber.jpg) center center no-repeat;
+  cursor: pointer;
+}
+
+
+#artigo3{
+  position: relative; /*o artigo é colocado em relação a posição definida pela div main_box_blogs*/
+  text-align: center;
+  float:left;
+  width:33.3%;
+  height:330px;
+  background: linear-gradient(rgb(0 0 0 / 0%), rgb(0 0 0 / 60%) 80%) 0% 0% / cover, url(https://cdn.sabado.pt/images/2019-10/img_640x427$2019_10_05_21_11_22_603829.jpg) center center no-repeat;
+  cursor: pointer;
+}
+/* css do texto dentro dos artigos */
+
+.canto_sup_direito
+{
+  position: absolute; /*serve para colocar div num local e esta não sair do lugar definido*/
+  top: 10px;
+  right: 15px;
+  color: white;
+  background: #21a4b8;
+  text-transform:uppercase;
+  border-radius: 3px;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  height: 35px;
+}
+
+.canto_sup_direito h2
+{
+  text-align: center;
+  font-size: 11px;
+  margin-top:-10px;
+  margin-bottom: 20px;
+  padding: 20px 10px 0px 10px;
+}
+
+.box_text_artigos
+{
+  padding:40px 0;
+  background: #dedede;
+  margin-top: 80px;
+}
+/* css do h2 */
+.box_text_artigos h2{
+  text-align: center;
+  font-size: 25px;
+  margin-top:0;
+  margin-bottom: 20px;
+  color:black;
+  padding-top: 20px;
+  padding-bottom: 0;
+}
+
+.descricao_blogs
+{
+  position: absolute; /*serve para colocar div num local e esta não sair do lugar definido*/
+  bottom: 65px;
+  background-color: rgba(255, 0, 0, 0);
+  color: white;
+  text-align: left;
+  font-size: 12px;
+  text-shadow: 1px 1px 1px rgb(48 48 48 / 35%);
+  text-overflow: ellipsis; /*serve para colocar o texto com ,..., quando a media query é usada*/
+  white-space: nowrap; /*suprimir as quebras de linhas*/
+  left: 5px;
+}
+
+
+/* caixas inferiores ao texto */
+
+#artigo1 .caixas_inferiores
+{
+  float: left; /*colocar o conteudo à esquerda*/
+  margin: 300px 0px 0px 5px;
+  display: inline-block; /*exibir o artigo em linha */
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+#artigo1 .caixas_inferiores .boxes
+{
+
+margin: 0px;
+display: inline; /*exibir o artigo em linha */
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo1 .caixas_inferiores .boxes_1
+{
+
+margin: 0px;
+display: inline; /*exibir o artigo em linha */
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+#artigo1 .caixas_inferiores .boxes_2
+{
+
+margin: 0px;
+display: inline; /*exibir o artigo em linha */
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo1 .caixas_inferiores .boxes_3
+{
+
+margin: 0px;
+display: inline; /*exibir o artigo em linha */
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+/* ++++++++++++++++++++++++++++++++ */
+#artigo2 .caixas_inferiores
+{
+  float: left; 
+  margin: 300px 0px 0px 5px;
+  display: inline-block; 
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+
+#artigo2 .caixas_inferiores .boxes
+{
+
+margin: 0px;
+display: inline; 
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo2 .caixas_inferiores .boxes_1
+{
+
+margin: 0px;
+display: inline; 
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo2 .caixas_inferiores .boxes_2
+{
+
+margin: 0px;
+display: inline; 
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo2 .caixas_inferiores .boxes_3
+{
+
+margin: 0px;
+display: inline; 
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+/* ++++++++++++++++++++++++++++++++ */
+#artigo3 .caixas_inferiores
+{
+  float: left;
+  margin: 300px 0px 0px 5px;
+  display: inline-block; 
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 11px;
+}
+#artigo3 .caixas_inferiores .boxes
+{
+
+margin: 0px;
+display: inline;
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo3 .caixas_inferiores .boxes_1
+{
+
+margin: 0px;
+display: inline; 
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo3 .caixas_inferiores .boxes_2
+{
+
+margin: 0px;
+display: inline;
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+#artigo3 .caixas_inferiores .boxes_3
+{
+
+margin: 0px;
+display: inline;
+background: rgba(42,52,66,0.8);
+padding: 5px 10px;
+border-radius: 3px;
+
+}
+
+/* botao_mais_artigos */
+
+.btn_artigos{
+background-color: rgb(189, 59, 59);
+border: none;
+color: white;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 14px;
+cursor: pointer;
+width: 95px;
+margin: 34px auto;
+height: 35px;
+}
+
+.btn_artigos:hover{
+  background-color: rgb(201, 74, 74);
+}
+
+/* ---------------------------------------------links------------------------------------------- */
+
+.imo-grid {
+  display: flex;
+  justify-content: center;
+  margin-right: 2cm;
+  margin-top: 50px;
+}
+
+ul {
+  list-style-type: none;
+  margin-right: 1cm;
+}
+
+.imo-heading-1 a {
+  justify-content: right;
+  color: #999694;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+}
+
+.imo-heading-1 a:hover {
+  text-decoration: underline;
+}
+
+.imo-heading-2 a {
+  justify-content: right;
+  color: #999694;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.imo-heading-2 a:hover {
+  text-decoration: underline;
+}
+
+.imo-heading-3 a {
+  justify-content: right;
+  color: #999694;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.imo-heading-3 a:hover {
+  text-decoration: underline;
+}
+
+.imo-heading-4 a {
+  justify-content: right;
+  color: #999694;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 12px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: #fff;
+}
+
+.imo-heading-4 a:hover {
+  text-decoration: underline;
+}
+
+.imo-heading-1 {
+  margin-left: 5px;
+}
+
+.imo-heading-2{
+  margin-top: 16px;
+  margin-right: 50px;
+}
+
+.imo-heading-4 {
+  margin-top: 16px;
+}
+
+.imo-heading-3 {
+  margin-right: 50px;
+  border-left-style: solid;
+  border-left-width: 1px;
+  border-left-color: thistle;
+}
+
+.imo-heading-3 ul{
+  margin-left: 50px;
+}
+
+#headtitle1 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 4cm;
+  color: rgba(0, 0, 0, 0.856)
+}
+
+#headtitle2 {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  margin-bottom: 4cm;
+  color: rgba(0, 0, 0, 0.856);
+  margin-left: 50px;
+}
+
+/* ---------------------------------------calcular preço do imóvel---------------------------------------- */
+
+.calculo_preco {
+  width: 250px;
+  height: 250px;
+  border: #C33A32 solid;
+  margin: 0 auto;
+  margin-top: 1cm;
+  font-weight: bold;
+  text-align: center;
+  background-color: #fafafa;
+}
+
+.btn_calculo input[type=submit]{
+  font-size: auto;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: underline;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  color: #C33A32;
+}
+
+.calculo img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+.calculo_preco-container{
+  width: 600px;
+  top: 25%;
+  left: 50%;
+  overflow: hidden;
+  padding: 30px;
+  border-radius: 5px;
+  background-color: #fafafa;
+  padding: 30px;
+  margin: 0 auto;
+  margin-top: 15px;
+  border: 2px solid #C33A32;;
+}
+
+.titulo{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  padding-bottom: 20px;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  color: #C33A32;
+}
+
+.tipologia_imovel{
+  margin: 5px 0px 10px 0px;
+}
+
+.area_imovel{
+  margin: 5px 0px 10px 0px;
+}
+
+.idade_imovel{
+  margin: 5px 0px 10px 0px;
+}
+
+.garagem_imovel{
+  margin: 5px 0px 10px 0px;
+}
+
+.transportes_imovel{
+  margin: 5px 0px 10px 0px;
+}
+
+label[for="texto_tipologia"]{
+  font-size: 17px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+label[for="texto_area"]{
+  font-size: 17px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+label[for="texto_idade"]{
+  font-size: 17px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+label[for="texto_garagem"]{
+  font-size: 17px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+label[for="texto_transportes"]{
+  font-size: 17px;
+  font-weight: bold;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+}
+
+.btn_calculoFinal{
+  text-align: center;
+}
+
+.btn_calculoFinal input[type=submit]{
+  color: #f0f0f0;
+  font-size: auto;
+  font-weight: bold;
+  text-align: center;
+  background-color: #C33A32;
+  border: 2px solid #C33A32;
+  border-radius: 5px;
+  cursor: pointer;
+  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  font-size: 17px;
+  cursor: pointer;
+  width: 150px;
+  height: auto;
+  margin-top: 15px;
+}
+
+/* ----------------------------------------------footer---------------------------------------- */
+
+.footer-container {
+  background-color: white;
+  padding: 10px;
+  padding-bottom: 1cm;
+  padding-top: 1cm;
+  padding-left: 9%;
+  justify-content: right;
+}
+
+.footer-logo {
+  float: right;
+  background: url(./imagens/imovirtuallogo.png) no-repeat;
+  width: 100%;
+  height: 60px;
+  justify-content: right;   
+}
+.footer {
+  width: 68%;
+  height: 40vh;
+  background-color: white;
+  color: black;
+  display: flex;
+  margin-right: 4rem;
+}
+
+.footer-heading {
+  display: flex;
+  flex-direction: column;
+  justify-content: right;
+  margin-right: auto;
+}
+
+.footer-heading a {
+  justify-content: right;
+  color: #6e6e6e;
+  text-decoration: none;
+  margin-bottom: 10px;
+  font-size: 13px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 500;
+  background-color: #fff;
+  
+}
+
+.footer-heading a:hover {
+  text-decoration: underline;
+}
+
+#footer-title {
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  font-weight: bold;
+  color: #303030;
+}
+
+.footer-socials{
+padding-left: 20%;
+}
+
+#socials {
+  margin-bottom: 10px;
+  display: flex;
+  flex-direction: column;
+  margin-right: -10cm;
+  margin-bottom: 10px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #303030;
+  
+}
+
+.texto_underfooter{
+  position: relative;
+  text-align: center;
+  bottom: 0;
+  width: 100%;
+}
+
+.texto_underfooter-1{
+  clear: both;
+  padding-top: 28px;
+  color: #bbb;
+  text-align: center;
+}
+
+.texto_underfooter-2{
+  color: #303030;
+  text-decoration: underline;
+}
+
+@media only screen 
+   and (max-width : 1600px) {
+   .navbar{
+    width: 100%;
+    height: 100%;
+  }
+   }
