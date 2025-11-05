@@ -1,0 +1,10 @@
+hnova 2 2
+znova 1 1
+znova 2 2
+cnovo 1 a a
+cnovo 1 s t
+cnovo 1 p liga
+zcomp 1
+rnova 1 1 entre 1 20 50
+rlista 1 1
+asoc 1 1 1

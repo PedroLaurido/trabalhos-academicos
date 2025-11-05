@@ -1,0 +1,8 @@
+hnova 2 2
+avanca 2
+hnova 1 2
+znova 1 2
+cnovo 1 a a
+avanca 7
+prox
+

@@ -1,0 +1,11 @@
+hnova 2 2
+znova 1 1
+znova 2 2
+cnovo 1 a a
+cnovo 1 a a
+cnovo 2 a a
+cnovo 1 a a
+cnovo 1 s t
+acom 2 3 liga
+zcomp 1
+zcomp 2
