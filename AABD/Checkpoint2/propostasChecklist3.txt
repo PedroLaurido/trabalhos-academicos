@@ -1,0 +1,37 @@
+Propostas de Funções, Procedimentos e Triggers
+
+a) Pedro - 2021130905
+
+Função: P_FUNC_2021130905
+Descrição: Função que calcula a média de vendas de um produto em todas as máquinas durante um período especificado
+
+Procedimento: Q_PROC_2021130905
+Descrição: Este procedimento atualiza o estado de uma máquina para "inoperacional" se o número de vendas em um dia específico for menor que um valor mínimo.
+
+Trigger: R_TRIG_2021130905
+Descrição: Este trigger atualiza o stock disponível no armazém quando uma venda é registrada.
+
+b) Fábio - 2021129697
+
+P_FUNC_2021129697
+Objetivo: Calcular o número total de vendas feitas por uma máquina num determinado mês e ano.
+Justificação: Permite obter estatísticas mensais por máquina — útil para relatórios de desempenho ou para identificar máquinas com baixo rendimento.
+
+Procedimento: Q_PROC_2021129697
+Objetivo: Criar uma encomenda de produtos para um armazém, inserindo automaticamente a encomenda e os produtos associados (se ainda não existirem).
+Justificação: Automatiza um processo essencial do sistema: o registo de encomendas feitas por armazéns. Este procedimento pode ser usado sempre que o armazém precisa de reabastecimento e permite simular uma integração com fornecedores.
+
+Trigger: R_TRIG_2021129697
+Objetivo: Enviar aviso sempre que o stock de um produto num armazém for atualizado para uma quantidade inferior a 5.
+Justificação: Automatiza alertas para atuação rápida de reposição.
+
+c) Tim - 2022161633
+
+Function(distancia_linear) - calculates distance between two points on earth. This function is required for views D and H to function.
+
+Procedure - on_restock_machines. Takes machine id,id of restocked items, the id of the person doing maintanence and the car id. 
+Updates machine, compartment, maintenence table. Used every time by the person when  the maintenance is finished.
+
+Trigger - log_out_of_stock_item_in_vehicle - logs products that employee ran out of during the trip. Can be used to replan the routs,
+by alarming emloyees nearby to visit this locations
+

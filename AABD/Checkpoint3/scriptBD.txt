@@ -1,0 +1,2715 @@
+--------------------------------------------------------
+--  File created - Domingo-Junho-01-2025   
+--------------------------------------------------------
+--------------------------------------------------------
+--  DDL for Table ARMAZEM
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ARMAZEM" 
+   (	"ID_ARMAZEM" NUMBER(*,0), 
+	"NOME" VARCHAR2(256 BYTE), 
+	"CAPACIDADE_TOTAL" NUMBER(*,0), 
+	"LATITUDE" FLOAT(8), 
+	"LONGITUDE" FLOAT(8)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table COMPARTIMENTO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."COMPARTIMENTO" 
+   (	"ID_COMP" NUMBER(*,0), 
+	"COD_COMP" VARCHAR2(512 BYTE), 
+	"PRECO" FLOAT(8), 
+	"QTD_MAX" NUMBER(*,0), 
+	"QTD_MIN" NUMBER(*,0), 
+	"QTD_ATUAL" NUMBER(*,0), 
+	"ESTADO" VARCHAR2(512 BYTE), 
+	"ID_HIST_CONFIG" NUMBER(*,0), 
+	"ID_PRODUTO" NUMBER(*,0), 
+	"ID_MAQUINA" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EMPRESA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."EMPRESA" 
+   (	"ID_EMPRESA" NUMBER(*,0), 
+	"NOME" VARCHAR2(512 BYTE), 
+	"CONTACTO" VARCHAR2(512 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ENCOMENDA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ENCOMENDA" 
+   (	"ID_ENCOMENDA" NUMBER(*,0), 
+	"QUANTIDADE" NUMBER(*,0), 
+	"DATA_ENCOMENDA" DATE, 
+	"ID_PRODUTO" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ENCOMENDA_ARMAZEM
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ENCOMENDA_ARMAZEM" 
+   (	"ID_ENCOMENDA" NUMBER(*,0), 
+	"ID_ARMAZEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ESTADO_MAQUINA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ESTADO_MAQUINA" 
+   (	"ID_ESTADO" NUMBER(*,0), 
+	"ESTADO" VARCHAR2(512 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table EVENTO_MAQUINA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."EVENTO_MAQUINA" 
+   (	"ID_EVENTO" NUMBER(*,0), 
+	"TIPO_EVENTO" VARCHAR2(512 BYTE), 
+	"DATA_HORA" DATE, 
+	"ID_MAQUINA" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table FUNCIONARIO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."FUNCIONARIO" 
+   (	"ID_FUNCIONARIO" NUMBER(*,0), 
+	"NOME" VARCHAR2(512 BYTE), 
+	"CONTACTO_FUNC" VARCHAR2(512 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table HIST_CONFCOMP_PROD
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."HIST_CONFCOMP_PROD" 
+   (	"ID_HIST" NUMBER(*,0), 
+	"ID_PRODUTO" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table HISTORICO_CONFIG_COMP
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."HISTORICO_CONFIG_COMP" 
+   (	"ID_HIST" NUMBER(*,0), 
+	"PRECO" FLOAT(8), 
+	"DATA_INICIO" DATE, 
+	"DATA_FIM" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MANUTENCAO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."MANUTENCAO" 
+   (	"ID_MANUTENCAO" NUMBER(*,0), 
+	"DATA_HORA" DATE, 
+	"ESTADO" VARCHAR2(512 BYTE), 
+	"ID_MAQUINA" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MANUT_FUNC
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."MANUT_FUNC" 
+   (	"ID_MANUTENCAO" NUMBER(*,0), 
+	"ID_FUNC" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAQUINA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."MAQUINA" 
+   (	"ID_MAQUINA" NUMBER(*,0), 
+	"LATITUDE" FLOAT(8), 
+	"LONGITUDE" FLOAT(8), 
+	"ULTIMA_ATUALIZACAO" DATE, 
+	"ULTIMA_VENDA" DATE, 
+	"ID_ESTADO" NUMBER(*,0), 
+	"ID_MANUTENCAO" NUMBER(*,0), 
+	"ID_EMPRESA" NUMBER(*,0), 
+	"CIDADE" VARCHAR2(100 BYTE), 
+	"LOCAL" VARCHAR2(255 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table MAQUINA_ESTADO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."MAQUINA_ESTADO" 
+   (	"ID_MAQUINA" NUMBER(*,0), 
+	"ID_ESTADO" NUMBER(*,0), 
+	"DATA_HORA" DATE
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRODUTO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."PRODUTO" 
+   (	"ID_PRODUTO" NUMBER(*,0), 
+	"NOME" VARCHAR2(512 BYTE), 
+	"TIPO_PRODUTO" VARCHAR2(512 BYTE)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table PRODUTO_VIAGEM
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."PRODUTO_VIAGEM" 
+   (	"ID_VIAGEM" NUMBER(*,0), 
+	"ID_PRODUTO" NUMBER(*,0), 
+	"QTD_INICIAL" NUMBER(*,0), 
+	"QTD_ATUAL" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table REABASTECIMENTO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."REABASTECIMENTO" 
+   (	"ID_REAB" NUMBER(*,0), 
+	"DATA_HORA" DATE, 
+	"QTD_ABASTECIMENTO" NUMBER(*,0), 
+	"ID_VISITA" NUMBER(*,0), 
+	"ID_COMP" NUMBER(*,0), 
+	"ID_VIAGEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ROTA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ROTA" 
+   (	"ID_ROTA" NUMBER(*,0), 
+	"NOME" VARCHAR2(512 BYTE), 
+	"ID_ARMA_PARTIDA" NUMBER(*,0), 
+	"ID_ARMA_DESTINO" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ROTA_MAQUINA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ROTA_MAQUINA" 
+   (	"ID_ROTA" NUMBER(*,0), 
+	"ID_MAQUINA" NUMBER(*,0), 
+	"ORDEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table ROTA_VIAG
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."ROTA_VIAG" 
+   (	"ID_ROTA" NUMBER(*,0), 
+	"ID_VIAGEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table STOCK_ARMAZEM
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."STOCK_ARMAZEM" 
+   (	"ID_STOCK" NUMBER(*,0), 
+	"QUANTIDADE_DISPONIVEL" NUMBER(*,0), 
+	"DATA_REGISTO" DATE, 
+	"ID_ARMAZEM" NUMBER(*,0), 
+	"ID_PRODUTO" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VEICULO
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."VEICULO" 
+   (	"ID_VEICULO" NUMBER(*,0), 
+	"CAPACIDADE_MAXIMA" NUMBER(*,0), 
+	"AUTONOMIA_KM" NUMBER(*,0), 
+	"DISPONIVEL" VARCHAR2(3 BYTE), 
+	"ID_ARMAZEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VENDA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."VENDA" 
+   (	"ID_VENDA" NUMBER(*,0), 
+	"DATA_HORA" DATE, 
+	"QUANTIDADE" NUMBER(*,0), 
+	"METODO_PAGAMENTO" VARCHAR2(512 BYTE), 
+	"ID_MAQUINA" NUMBER(*,0), 
+	"ID_COMP" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VIAGEM
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."VIAGEM" 
+   (	"ID_VIAGEM" NUMBER(*,0), 
+	"DATA_INICIO" DATE, 
+	"DATA_FIM" DATE, 
+	"DISTANCIA_TOTAL" NUMBER(*,0), 
+	"ID_ARMAZEM" NUMBER(*,0), 
+	"ID_VEICULO" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VIAGEM_FUNC
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."VIAGEM_FUNC" 
+   (	"ID_VIAGEM" NUMBER(*,0), 
+	"ID_FUNC" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Table VISITA_MAQUINA
+--------------------------------------------------------
+
+  CREATE TABLE "AABDG07"."VISITA_MAQUINA" 
+   (	"ID_VISITA" NUMBER(*,0), 
+	"DATA_HORA" DATE, 
+	"KMS_PERCORRIDOS" NUMBER(*,0), 
+	"OBSERVACOES" VARCHAR2(512 BYTE), 
+	"ID_MAQUINA" NUMBER(*,0), 
+	"ID_VIAGEM" NUMBER(*,0)
+   ) SEGMENT CREATION IMMEDIATE 
+  PCTFREE 10 PCTUSED 40 INITRANS 1 MAXTRANS 255 NOCOMPRESS LOGGING
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for View ARMAZEM_MAIS_VISITADO
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."ARMAZEM_MAIS_VISITADO" ("ID_ARMAZEM") AS 
+  SELECT id_armazem
+FROM (SELECT id_armazem FROM viagem GROUP BY id_armazem ORDER BY COUNT(*) DESC)
+WHERE ROWNUM = 1;
+--------------------------------------------------------
+--  DDL for View VIEW_A
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_A" ("ID_MAQUINA", "DATA_HORA_ABAST", "LOCAL", "QUANT_ABASTECIDA", "NUM_PRODUTOS_DIFERENTES") AS 
+  SELECT 
+    m.id_maquina,
+    r.data_hora AS data_hora_abast,
+    m.cidade AS local,
+    SUM(r.qtd_abastecimento) AS quant_abastecida,
+    COUNT(DISTINCT p.id_produto) AS num_produtos_diferentes
+FROM 
+    reabastecimento r
+JOIN compartimento c ON r.id_reab = c.id_reab
+JOIN produto p ON c.id_produto = p.id_produto
+JOIN maquina_comp mc ON c.id_comp = mc.id_comp
+JOIN maquina m ON mc.id_maquina = m.id_maquina
+JOIN estado_maquina em ON m.id_estado = em.id_estado
+WHERE 
+    p.tipo_produto = 'Snacks'
+    AND m.cidade = 'Coimbra'
+    AND TRUNC(r.data_hora) = TRUNC(SYSDATE - 1)
+    AND em.estado <> 'inativo'
+    -- No snack stock in this machine:
+    AND NOT EXISTS (
+        SELECT 1
+        FROM compartimento c2
+        JOIN produto p2 ON c2.id_produto = p2.id_produto
+        JOIN maquina_comp mc2 ON c2.id_comp = mc2.id_comp
+        WHERE 
+            p2.tipo_produto = 'Snacks'
+            AND c2.qtd_atual > 0
+            AND mc2.id_maquina = m.id_maquina
+    )
+GROUP BY 
+    m.id_maquina, r.data_hora, m.cidade
+ORDER BY 
+    quant_abastecida DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_B
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_B" ("IDMAQUINA", "LOCAL", "REF_PRODUTO", "PRODUTO", "QUANT_EXISTENTE", "QUANT_ABASTECIDA", "CAPACIDADE") AS 
+  SELECT 
+    m.id_maquina AS IDMAQUINA,  -- ID da máquina visitada
+    m.latitude || ', ' || m.longitude AS LOCAL,  -- Localização da máquina (latitude e longitude)
+    p.id_produto AS REF_PRODUTO,  -- Referência do produto
+    p.nome AS PRODUTO,  -- Nome do produto
+    c.qtd_atual AS QUANT_EXISTENTE,  -- Quantidade existente no compartimento
+    r.qtd_abastecimento AS QUANT_ABASTECIDA,  -- Quantidade abastecida durante a visita
+    c.qtd_max AS CAPACIDADE  -- Capacidade máxima do compartimento
+FROM viagem v
+JOIN visita_maquina vm ON v.id_visita = vm.id_visita  -- Relaciona viagem com visitas às máquinas
+JOIN maquina m ON vm.id_visita = m.id_visita  -- Relaciona visita com máquina
+JOIN maquina_comp mc ON m.id_maquina = mc.id_maquina  -- Relaciona máquina com compartimentos
+JOIN compartimento c ON mc.id_comp = c.id_comp  -- Relaciona compartimento com produto
+JOIN produto p ON c.id_produto = p.id_produto  -- Obtém informações do produto
+JOIN reabastecimento r ON c.id_reab = r.id_reab  -- Obtém informações sobre o reabastecimento
+WHERE v.id_viagem = 2025031105  -- Filtra apenas a viagem com código 2025031105
+ORDER BY vm.data_hora ASC, r.qtd_abastecimento DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_C
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_C" ("ID_MAQUINA", "LOCAL", "REF_PRODUTO", "PRODUTO", "QUANT_VENDIDA_MES", "QUANT_VEND_DESDE_ULTIMO") AS 
+  SELECT
+    M.ID_MAQUINA,
+    TO_CHAR(M.LATITUDE) || ' / ' || TO_CHAR(M.LONGITUDE) AS LOCAL, 
+    P.ID_PRODUTO AS REF_PRODUTO,
+    P.NOME AS PRODUTO,
+
+    -- TOTAL DE PRODUTOS VENDIDOS NO MÊS ANTERIOR
+    SUM(CASE 
+    WHEN V.DATA_HORA BETWEEN 
+        TRUNC(ADD_MONTHS(SYSDATE, -1), 'MM') -- Dá o 1º dia do mês anterior
+        AND LAST_DAY(ADD_MONTHS(SYSDATE, -1)) -- Dá o último dia do mês anterior
+    THEN V.QUANTIDADE 
+    ELSE 0 
+    END) AS QUANT_VENDIDA_MES,
+
+    -- TOTAL DESDE O ÚLTIMO REABASTECIMENTO
+    SUM(CASE 
+        WHEN V.DATA_HORA > R.DATA_HORA 
+        THEN V.QUANTIDADE 
+        ELSE 0 
+    END) AS QUANT_VEND_DESDE_ULTIMO
+
+FROM MAQUINA M
+JOIN VENDA V ON V.ID_MAQUINA = M.ID_MAQUINA -- LIGA AS VENDAS À MÁQUINA
+JOIN COMP_VENDA CV ON CV.ID_VENDA = V.ID_VENDA -- LIGA A VENDA A UM COMPARTIMENTO
+JOIN COMPARTIMENTO C ON C.ID_COMP = CV.ID_COMP -- OBTÉM O COMPARTIMENTO E O PRODUTO ASSOCIADO
+JOIN PRODUTO P ON P.ID_PRODUTO = C.ID_PRODUTO
+LEFT JOIN REABASTECIMENTO R ON R.ID_REAB = C.ID_REAB -- LIGA AO REABASTECIMENTO PARA SABER A DATA DO ÚLTIMO
+JOIN MAQUINA_COMP MC ON MC.ID_COMP = C.ID_COMP AND MC.ID_MAQUINA = M.ID_MAQUINA -- LIGA COM MÁQUINA_COMP CASO PRECISE DA QTD MÁXIMA POR PRODUTO POR MÁQUINA
+WHERE C.QTD_ATUAL <= (C.QTD_MAX * 0.5)-- FILTRA PRODUTOS QUE NÃO EXCEDEM 50% DA CAPACIDADE
+GROUP BY M.ID_MAQUINA, TO_CHAR(M.LATITUDE) || ' / ' || TO_CHAR(M.LONGITUDE),P.ID_PRODUTO, P.NOME
+ORDER BY QUANT_VENDIDA_MES DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_E
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_E" ("IDMAQUINA", "PRODUTO", "MEDIAMENSAL") AS 
+  SELECT v.id_maquina AS IDMAQUINA, p.nome AS PRODUTO, ROUND(AVG(v.quantidade),2) AS MEDIAMENSAL
+FROM venda v
+JOIN comp_venda cv ON v.id_venda = cv.id_venda
+JOIN compartimento c ON cv.id_comp = c.id_comp
+JOIN produto p ON c.id_produto = p.id_produto
+JOIN maquina_estado me ON v.id_maquina = me.id_maquina
+JOIN reabastecimento r ON c.id_reab = r.id_reab
+WHERE UPPER(me.estado) = 'OPERACIONAL' -- Só máquinas com estado 'operacional'
+AND EXTRACT(YEAR FROM v.data_hora) IN (2023, 2024) -- Só 2023 e 2024
+AND r.qtd_abastecimento > (SELECT AVG(qtd_abastecimento) FROM reabastecimento) -- Só reabastecimentos acima da média
+GROUP BY v.id_maquina, p.nome
+ORDER BY MEDIAMENSAL DESC, p.nome;
+--------------------------------------------------------
+--  DDL for View VIEW_F
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_F" ("ID_MAQUINA", "REFPRODUTO", "QUANT_VENDIDA", "QUANT_REABASTECIDA", "PERCENTAGEM") AS 
+  WITH MAQ_TOP AS (
+    SELECT ID_MAQUINA
+    FROM (
+        SELECT M2.ID_MAQUINA,
+               SUM(V2.QUANTIDADE) AS TOTAL_VENDIDA
+        FROM MAQUINA M2
+        JOIN VENDA V2 ON V2.ID_MAQUINA = M2.ID_MAQUINA -- LIGA AS VENDAS À MÁQUINA
+        JOIN COMP_VENDA CV2 ON CV2.ID_VENDA = V2.ID_VENDA -- LIGA A VENDA AO COMPARTIMENTO
+        JOIN COMPARTIMENTO C2 ON C2.ID_COMP = CV2.ID_COMP -- LIGA AOS COMPARTIMENTOS
+        JOIN PRODUTO P2 ON P2.ID_PRODUTO = C2.ID_PRODUTO -- LIGA AOS PRODUTOS PARA VERIFICAR O TIPO
+        WHERE P2.TIPO_PRODUTO = 'AGUA' -- FILTRA SOMENTE PRODUTOS DO TIPO 'AGUA'
+          AND V2.DATA_HORA >= SYSDATE - 3 -- CONSIDERA APENAS VENDAS DOS ÚLTIMOS 3 DIAS (72H)
+        GROUP BY M2.ID_MAQUINA
+        ORDER BY TOTAL_VENDIDA DESC -- ORDENA PELA MAIOR QUANTIDADE VENDIDA
+    )
+    WHERE ROWNUM = 1 -- ESCOLHE APENAS A PRIMEIRA MÁQUINA (QUE MAIS VENDEU ÁGUA)
+),
+
+DADOS AS (
+    SELECT
+        M.ID_MAQUINA,
+        P.ID_PRODUTO,
+
+        -- QUANTIDADE DESTE PRODUTO VENDIDA EM FEVEREIRO
+        SUM(CASE 
+            WHEN TO_CHAR(V.DATA_HORA, 'MM') = '02' THEN V.QUANTIDADE
+            ELSE 0 
+        END) AS QUANT_VENDIDA,
+
+        -- QUANTIDADE DESTE PRODUTO REABASTECIDA EM FEVEREIRO
+        SUM(CASE 
+            WHEN TO_CHAR(R.DATA_HORA, 'MM') = '02' THEN R.QTD_ABASTECIMENTO
+            ELSE 0 
+        END) AS QUANT_REABASTECIDA
+
+    FROM MAQUINA M
+    JOIN VENDA V ON V.ID_MAQUINA = M.ID_MAQUINA -- LIGA AS VENDAS À MÁQUINA
+    JOIN COMP_VENDA CV ON CV.ID_VENDA = V.ID_VENDA -- LIGA A VENDA AO COMPARTIMENTO
+    JOIN COMPARTIMENTO C ON C.ID_COMP = CV.ID_COMP -- LIGA AOS COMPARTIMENTOS
+    JOIN PRODUTO P ON P.ID_PRODUTO = C.ID_PRODUTO -- LIGA AOS PRODUTOS
+    LEFT JOIN REABASTECIMENTO R ON R.ID_REAB = C.ID_REAB -- LIGA AOS REABASTECIMENTOS
+
+    WHERE P.TIPO_PRODUTO = 'AGUA' -- CONSIDERA APENAS PRODUTOS DO TIPO 'AGUA'
+      AND M.ID_MAQUINA = (SELECT ID_MAQUINA FROM MAQ_TOP) -- FILTRA PELA MÁQUINA QUE MAIS VENDEU
+
+    GROUP BY M.ID_MAQUINA, P.ID_PRODUTO
+),
+
+TOTAL AS (
+    SELECT
+        ID_MAQUINA,
+        SUM(QUANT_VENDIDA) AS TOTAL_VENDIDA -- TOTAL DE VENDAS DE TODOS OS PRODUTOS EM FEVEREIRO
+    FROM DADOS
+    GROUP BY ID_MAQUINA
+)
+
+SELECT
+    D.ID_MAQUINA,
+    D.ID_PRODUTO AS REFPRODUTO,
+    D.QUANT_VENDIDA,
+    D.QUANT_REABASTECIDA,
+
+    -- PERCENTAGEM DE VENDAS DO PRODUTO FACE AO TOTAL DA MÁQUINA
+    ROUND(D.QUANT_VENDIDA * 100 / NULLIF(T.TOTAL_VENDIDA, 0), 0) AS PERCENTAGEM
+
+FROM DADOS D
+JOIN TOTAL T ON T.ID_MAQUINA = D.ID_MAQUINA;
+--------------------------------------------------------
+--  DDL for View VIEW_G
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_G" ("VIAGEM", "TIPO_PRODUTO", "QUANT_ABASTECIDA", "NUM_MAQ_ABASTECIDAS") AS 
+  SELECT
+    V.ID_VIAGEM AS VIAGEM,                                -- ID DA VIAGEM
+    P.TIPO_PRODUTO,                                       -- TIPO DO PRODUTO
+
+    SUM(R.QTD_ABASTECIMENTO) AS QUANT_ABASTECIDA,         -- QUANTIDADE TOTAL ABASTECIDA DESTE PRODUTO
+
+    COUNT(DISTINCT M.ID_MAQUINA) AS NUM_MAQ_ABASTECIDAS   -- NÚMERO TOTAL DE MÁQUINAS ABASTECIDAS
+
+FROM REABASTECIMENTO R
+
+JOIN COMPARTIMENTO C ON C.ID_REAB = R.ID_REAB             -- LIGAÇÃO AO COMPARTIMENTO
+JOIN PRODUTO P ON P.ID_PRODUTO = C.ID_PRODUTO             -- LIGAÇÃO AO PRODUTO
+
+JOIN MAQUINA_COMP MC ON MC.ID_COMP = C.ID_COMP            -- LIGAÇÃO COMPARTIMENTO ? MÁQUINA_COMP
+JOIN MAQUINA M ON M.ID_MAQUINA = MC.ID_MAQUINA            -- LIGAÇÃO FINAL À MÁQUINA
+
+JOIN VIAGEM V ON V.ID_REAB = R.ID_REAB                    -- LIGAÇÃO DA VIAGEM PARA OBTER O ID
+
+WHERE EXTRACT(YEAR FROM R.DATA_HORA) = EXTRACT(YEAR FROM SYSDATE) - 1  -- SÓ REABASTECIMENTOS DO ANO PASSADO
+  AND M.CIDADE LIKE '%COIMBRA%'                           -- APENAS MÁQUINAS LOCALIZADAS EM COIMBRA
+
+GROUP BY V.ID_VIAGEM, P.TIPO_PRODUTO                      -- AGRUPA POR VIAGEM E PRODUTO
+
+HAVING COUNT(DISTINCT M.ID_MAQUINA) > 3                   -- CONSIDERA SÓ PRODUTOS COM MAIS DE 3 MÁQUINAS ABASTECIDAS
+
+ORDER BY QUANT_ABASTECIDA DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_I
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_I" ("ARMAZEM", "MAQUINA", "N_VISITAS", "QUANT_TOTAL", "QUANT_MEDIA_VISITA", "N_PROD_DIF") AS 
+  SELECT "ARMAZEM","MAQUINA","N_VISITAS","QUANT_TOTAL","QUANT_MEDIA_VISITA","N_PROD_DIF"
+FROM (
+    SELECT
+        a.nome AS ARMAZEM,
+        vm25.id_maquina AS MAQUINA,
+        vm25.num_visitas AS N_VISITAS,
+        vm25.total_abastecido AS QUANT_TOTAL,
+        vm25.media_abastecido AS QUANT_MEDIA_VISITA,
+        ROUND(AVG(num_produtos_reabastecidos(c.id_reab)), 2) AS N_PROD_DIF
+    FROM visitas_maquina_2025 vm25
+    JOIN viagem v ON vm25.id_maquina = v.id_visita
+    JOIN armazem a ON v.id_armazem = (SELECT id_armazem FROM armazem_mais_visitado)
+    JOIN maquina_comp mc ON vm25.id_maquina = mc.id_maquina
+    JOIN compartimento c ON mc.id_comp = c.id_comp
+    GROUP BY a.nome, vm25.id_maquina, vm25.num_visitas, vm25.total_abastecido, vm25.media_abastecido
+    ORDER BY vm25.num_visitas DESC
+)
+WHERE ROWNUM <= 3;
+--------------------------------------------------------
+--  DDL for View VIEW_J_2021129697
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_J_2021129697" ("CIDADE", "TIPO_PRODUTO", "ID_MAQUINA", "TOTAL_VENDIDO") AS 
+  SELECT
+    M.CIDADE,                                            -- LOCALIZAÇÃO DA MÁQUINA
+    P.TIPO_PRODUTO,                                     -- TIPO DO PRODUTO VENDIDO
+    M.ID_MAQUINA,                                       -- MÁQUINA ONDE FOI FEITA A VENDA
+    SUM(V.QUANTIDADE) AS TOTAL_VENDIDO                  -- TOTAL DE PRODUTOS VENDIDOS
+
+FROM VENDA V
+
+JOIN COMP_VENDA CV ON V.ID_VENDA = CV.ID_VENDA          -- LIGAÇÃO À COMP_VENDA
+JOIN COMPARTIMENTO C ON C.ID_COMP = CV.ID_COMP          -- LIGAÇÃO AO COMPARTIMENTO
+JOIN PRODUTO P ON P.ID_PRODUTO = C.ID_PRODUTO           -- LIGAÇÃO AO PRODUTO
+JOIN MAQUINA M ON M.ID_MAQUINA = V.ID_MAQUINA           -- LIGAÇÃO À MÁQUINA PARA OBTER A CIDADE
+
+GROUP BY M.CIDADE, P.TIPO_PRODUTO, M.ID_MAQUINA         -- AGRUPA POR LOCALIZAÇÃO, PRODUTO E MÁQUINA
+
+ORDER BY TOTAL_VENDIDO DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_J_2021130905
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_J_2021130905" ("ID_MAQUINA", "ID_PRODUTO", "MES", "QUANTIDADE", "FATURAMENTO") AS 
+  SELECT 
+    v.id_maquina,
+    p.id_produto,
+    TO_CHAR(v.data_hora, 'YYYY-MM') AS mes,
+    SUM(v.quantidade) AS quantidade,
+    SUM(v.quantidade * c.preco) AS faturamento
+FROM venda v
+JOIN comp_venda cv ON v.id_venda = cv.id_venda
+JOIN compartimento c ON cv.id_comp = c.id_comp
+JOIN produto p ON c.id_produto = p.id_produto
+GROUP BY v.id_maquina, p.id_produto, TO_CHAR(v.data_hora, 'YYYY-MM')
+ORDER BY v.id_maquina, p.id_produto, mes;
+--------------------------------------------------------
+--  DDL for View VIEW_J_2022161633
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_J_2022161633" ("ID_PRODUTO", "NOME_PRODUTO", "TIPO_PRODUTO", "MEDIA_ESTOQUE_MAQUINAS") AS 
+  SELECT
+    p.id_produto,
+    p.nome AS nome_produto,
+    p.tipo_produto,
+    AVG(c.qtd_atual) AS media_estoque_maquinas
+FROM
+    produto p
+JOIN compartimento c ON c.id_produto = p.id_produto
+JOIN maquina_comp mc ON mc.id_comp = c.id_comp
+JOIN maquina m ON m.id_maquina = mc.id_maquina
+GROUP BY
+    p.id_produto, p.nome, p.tipo_produto;
+--------------------------------------------------------
+--  DDL for View VIEW_K_2021129697
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_K_2021129697" ("ID_MAQUINA", "ULTIMO_REABASTECIMENTO", "DIAS_SEM_REAB", "PRODUTO_MAIS_VENDIDO") AS 
+  SELECT
+    MQ.ID_MAQUINA,                                                 -- IDENTIFICADOR DA MÁQUINA
+    MQ.ULTIMO_REABASTECIMENTO,                                     -- DATA DO ÚLTIMO REABASTECIMENTO DA MÁQUINA
+    TRUNC(SYSDATE - MQ.ULTIMO_REABASTECIMENTO) AS DIAS_SEM_REAB,   -- NÚMERO DE DIAS (INTEIRO) DESDE O ÚLTIMO REABASTECIMENTO
+    PV.TIPO_PRODUTO AS PRODUTO_MAIS_VENDIDO                        -- PRODUTO MAIS VENDIDO NA MÁQUINA
+
+-- SUBQUERY MQ: CALCULA A DATA DO ÚLTIMO REABASTECIMENTO POR MÁQUINA
+FROM (
+    SELECT M.ID_MAQUINA, MAX(R.DATA_HORA) AS ULTIMO_REABASTECIMENTO
+    FROM MAQUINA M
+    JOIN MAQUINA_COMP MC ON M.ID_MAQUINA = MC.ID_MAQUINA           -- LIGA MÁQUINA AOS COMPARTIMENTOS
+    JOIN COMPARTIMENTO C ON C.ID_COMP = MC.ID_COMP                 -- OBTÉM O COMPARTIMENTO DA MÁQUINA
+    JOIN REABASTECIMENTO R ON R.ID_REAB = C.ID_REAB                -- OBTÉM OS REABASTECIMENTOS FEITOS NESSES COMPARTIMENTOS
+    GROUP BY M.ID_MAQUINA                                          -- AGRUPA POR MÁQUINA PARA CALCULAR O MÁXIMO (ÚLTIMO)
+) MQ
+
+-- SUBQUERY PV: CALCULA O PRODUTO MAIS VENDIDO POR MÁQUINA (TOP 1)
+LEFT JOIN (
+    SELECT ID_MAQUINA, TIPO_PRODUTO
+    FROM (
+        SELECT V.ID_MAQUINA, P.TIPO_PRODUTO, SUM(V.QUANTIDADE) AS TOTAL, -- TOTAL DE VENDAS DO PRODUTO NA MÁQUINA
+               ROW_NUMBER() OVER (PARTITION BY V.ID_MAQUINA ORDER BY SUM(V.QUANTIDADE) DESC) AS RN -- RANKING
+        FROM VENDA V
+        JOIN COMP_VENDA CV ON V.ID_VENDA = CV.ID_VENDA                   -- LIGA AOS ITENS VENDIDOS
+        JOIN COMPARTIMENTO C ON C.ID_COMP = CV.ID_COMP                   -- LIGA AOS COMPARTIMENTOS
+        JOIN PRODUTO P ON P.ID_PRODUTO = C.ID_PRODUTO                    -- LIGA AO PRODUTO VENDIDO
+        GROUP BY V.ID_MAQUINA, P.TIPO_PRODUTO                            -- AGRUPA POR MÁQUINA E PRODUTO
+    )
+    WHERE RN = 1                                                         -- FILTRA APENAS O PRODUTO MAIS VENDIDO (TOP 1) POR MÁQUINA
+) PV ON PV.ID_MAQUINA = MQ.ID_MAQUINA                                    -- LIGA O RESULTADO AO BLOCO DAS MÁQUINAS E REABASTECIMENTOS
+
+-- ORDENA O RESULTADO POR QUEM ESTÁ HÁ MAIS TEMPO SEM REABASTECIMENTO
+ORDER BY DIAS_SEM_REAB DESC;
+--------------------------------------------------------
+--  DDL for View VIEW_K_2021130905
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_K_2021130905" ("ID_PRODUTO", "NOME", "STOCK_ARMAZEM", "STOCK_COMPARTIMENTO", "DIFERENCA_STOCK") AS 
+  SELECT 
+    p.id_produto,
+    p.nome,
+    (SELECT SUM(sa.quantidade_disponivel)
+     FROM stock_armazem sa
+     WHERE sa.id_produto = p.id_produto) AS stock_armazem,
+    (SELECT SUM(c.qtd_atual)
+     FROM compartimento c
+     WHERE c.id_produto = p.id_produto) AS stock_compartimento,
+    ((SELECT SUM(sa.quantidade_disponivel)
+      FROM stock_armazem sa
+      WHERE sa.id_produto = p.id_produto) -
+     (SELECT SUM(c.qtd_atual)
+      FROM compartimento c
+      WHERE c.id_produto = p.id_produto)) AS diferenca_stock
+FROM produto p;
+--------------------------------------------------------
+--  DDL for View VIEW_K_2022161633
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VIEW_K_2022161633" ("ID_MAQUINA", "EMPRESA", "LATITUDE", "LONGITUDE", "AVG_SALES_PER_DAY", "COMPARTIMENTOS_CRITICOS", "TOTAL_FALTANDO") AS 
+  WITH machine_popularity AS (
+    SELECT
+        m.id_maquina,
+        ROUND(COUNT(v.id_venda) / GREATEST(1, TRUNC(SYSDATE - MIN(v.data_hora))), 2) AS avg_sales_per_day
+    FROM maquina m
+    JOIN venda v ON v.id_maquina = m.id_maquina
+    GROUP BY m.id_maquina
+)
+SELECT
+    m.id_maquina,
+    e.nome AS empresa,
+    m.latitude,
+    m.longitude,
+    mp.avg_sales_per_day,
+    COUNT(c.id_comp) AS compartimentos_criticos,
+    SUM(c.qtd_min - c.qtd_atual) AS total_faltando
+FROM maquina m
+JOIN empresa e ON e.id_empresa = m.id_empresa
+JOIN maquina_comp mc ON mc.id_maquina = m.id_maquina
+JOIN compartimento c ON c.id_comp = mc.id_comp
+JOIN machine_popularity mp ON mp.id_maquina = m.id_maquina
+WHERE c.qtd_atual <= c.qtd_min
+GROUP BY
+    m.id_maquina,
+    e.nome,
+    m.latitude,
+    m.longitude,
+    mp.avg_sales_per_day
+ORDER BY mp.avg_sales_per_day DESC, total_faltando DESC;
+--------------------------------------------------------
+--  DDL for View VISITAS_MAQUINA_2025
+--------------------------------------------------------
+
+  CREATE OR REPLACE FORCE VIEW "AABDG07"."VISITAS_MAQUINA_2025" ("ID_MAQUINA", "NUM_VISITAS", "TOTAL_ABASTECIDO", "MEDIA_ABASTECIDO") AS 
+  SELECT vm.id_maquina,COUNT(*) AS num_visitas,SUM(r.qtd_abastecimento) AS total_abastecido,ROUND(AVG(r.qtd_abastecimento), 2) AS media_abastecido
+FROM viagem v
+JOIN visita_maquina vm ON v.id_visita = vm.id_visita
+JOIN compartimento c ON vm.id_maquina = c.id_comp
+JOIN reabastecimento r ON c.id_reab = r.id_reab
+WHERE v.data_inicio >= TO_DATE('2025-01-01', 'YYYY-MM-DD')
+AND v.id_armazem = (SELECT id_armazem FROM armazem_mais_visitado)
+GROUP BY vm.id_maquina;
+REM INSERTING into AABDG07.ARMAZEM
+SET DEFINE OFF;
+Insert into AABDG07.ARMAZEM (ID_ARMAZEM,NOME,CAPACIDADE_TOTAL,LATITUDE,LONGITUDE) values ('1','EMPRESA A','1000','40,2','-8,41');
+Insert into AABDG07.ARMAZEM (ID_ARMAZEM,NOME,CAPACIDADE_TOTAL,LATITUDE,LONGITUDE) values ('2','EMPRESA B','1500','40,2','-8,42');
+Insert into AABDG07.ARMAZEM (ID_ARMAZEM,NOME,CAPACIDADE_TOTAL,LATITUDE,LONGITUDE) values ('3','LOUSÃ','750','40','-8,24');
+Insert into AABDG07.ARMAZEM (ID_ARMAZEM,NOME,CAPACIDADE_TOTAL,LATITUDE,LONGITUDE) values ('4','TAVEIRO','1000','40,2','-8,41');
+Insert into AABDG07.ARMAZEM (ID_ARMAZEM,NOME,CAPACIDADE_TOTAL,LATITUDE,LONGITUDE) values ('5','USCELAS','500','40,2','-8,4');
+REM INSERTING into AABDG07.COMPARTIMENTO
+SET DEFINE OFF;
+REM INSERTING into AABDG07.EMPRESA
+SET DEFINE OFF;
+Insert into AABDG07.EMPRESA (ID_EMPRESA,NOME,CONTACTO) values ('1','VendingCoimbra SA','239000100');
+Insert into AABDG07.EMPRESA (ID_EMPRESA,NOME,CONTACTO) values ('2','VendingPorto SA','239000200');
+Insert into AABDG07.EMPRESA (ID_EMPRESA,NOME,CONTACTO) values ('3','VendingLisboa SA','239000300');
+REM INSERTING into AABDG07.ENCOMENDA
+SET DEFINE OFF;
+Insert into AABDG07.ENCOMENDA (ID_ENCOMENDA,QUANTIDADE,DATA_ENCOMENDA,ID_PRODUTO) values ('1','20',to_date('25.03.01','RR.MM.DD'),'1');
+REM INSERTING into AABDG07.ENCOMENDA_ARMAZEM
+SET DEFINE OFF;
+Insert into AABDG07.ENCOMENDA_ARMAZEM (ID_ENCOMENDA,ID_ARMAZEM) values ('1','1');
+REM INSERTING into AABDG07.ESTADO_MAQUINA
+SET DEFINE OFF;
+Insert into AABDG07.ESTADO_MAQUINA (ID_ESTADO,ESTADO) values ('7001','Operacional');
+Insert into AABDG07.ESTADO_MAQUINA (ID_ESTADO,ESTADO) values ('1','Operacional');
+Insert into AABDG07.ESTADO_MAQUINA (ID_ESTADO,ESTADO) values ('2','INOPERACIONAL');
+REM INSERTING into AABDG07.EVENTO_MAQUINA
+SET DEFINE OFF;
+Insert into AABDG07.EVENTO_MAQUINA (ID_EVENTO,TIPO_EVENTO,DATA_HORA,ID_MAQUINA) values ('6001','Ativa',to_date('25.04.05','RR.MM.DD'),null);
+Insert into AABDG07.EVENTO_MAQUINA (ID_EVENTO,TIPO_EVENTO,DATA_HORA,ID_MAQUINA) values ('1','Heartbeat',to_date('25.03.01','RR.MM.DD'),null);
+REM INSERTING into AABDG07.FUNCIONARIO
+SET DEFINE OFF;
+Insert into AABDG07.FUNCIONARIO (ID_FUNCIONARIO,NOME,CONTACTO_FUNC) values ('1','Ana Silva','910000000');
+Insert into AABDG07.FUNCIONARIO (ID_FUNCIONARIO,NOME,CONTACTO_FUNC) values ('2','João Costa','920000000');
+REM INSERTING into AABDG07.HIST_CONFCOMP_PROD
+SET DEFINE OFF;
+REM INSERTING into AABDG07.HISTORICO_CONFIG_COMP
+SET DEFINE OFF;
+Insert into AABDG07.HISTORICO_CONFIG_COMP (ID_HIST,PRECO,DATA_INICIO,DATA_FIM) values ('1','1',to_date('25.03.01','RR.MM.DD'),null);
+REM INSERTING into AABDG07.MANUTENCAO
+SET DEFINE OFF;
+Insert into AABDG07.MANUTENCAO (ID_MANUTENCAO,DATA_HORA,ESTADO,ID_MAQUINA) values ('2',to_date('25.04.05','RR.MM.DD'),'OK',null);
+Insert into AABDG07.MANUTENCAO (ID_MANUTENCAO,DATA_HORA,ESTADO,ID_MAQUINA) values ('1',to_date('25.03.01','RR.MM.DD'),'OK',null);
+REM INSERTING into AABDG07.MANUT_FUNC
+SET DEFINE OFF;
+REM INSERTING into AABDG07.MAQUINA
+SET DEFINE OFF;
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('2','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA','COIMBRASHOPPING');
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('3','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA','COIMBRASHOPPING');
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('4','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA','COIMBRASHOPPING');
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('9001','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA',null);
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('9002','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA',null);
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('9003','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA',null);
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('9004','40,2','-8,4',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'1','1','1','COIMBRA',null);
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('1','40,2','-8,41',to_date('25.03.01','RR.MM.DD'),to_date('25.03.01','RR.MM.DD'),'1','1','1','COIMBRA','COIMBRASHOPPING');
+Insert into AABDG07.MAQUINA (ID_MAQUINA,LATITUDE,LONGITUDE,ULTIMA_ATUALIZACAO,ULTIMA_VENDA,ID_ESTADO,ID_MANUTENCAO,ID_EMPRESA,CIDADE,LOCAL) values ('5','40,2','-8,4',to_date('25.04.04','RR.MM.DD'),to_date('25.04.04','RR.MM.DD'),'1','1','1','LISBOA','COIMBRASHOPPING');
+REM INSERTING into AABDG07.MAQUINA_ESTADO
+SET DEFINE OFF;
+Insert into AABDG07.MAQUINA_ESTADO (ID_MAQUINA,ID_ESTADO,DATA_HORA) values ('1','1',to_date('25.03.01','RR.MM.DD'));
+REM INSERTING into AABDG07.PRODUTO
+SET DEFINE OFF;
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('6','SUMOL','BEBIDA');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('3','CAFÉ','BEBIDA');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('1','AGUA','BEBIDA');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('2','SNICKERS','DOCE');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('4','PRINGLES','SALGADO');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('5','MARS','DOCE');
+Insert into AABDG07.PRODUTO (ID_PRODUTO,NOME,TIPO_PRODUTO) values ('7','TWIX','DOCE');
+REM INSERTING into AABDG07.PRODUTO_VIAGEM
+SET DEFINE OFF;
+REM INSERTING into AABDG07.REABASTECIMENTO
+SET DEFINE OFF;
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('100',to_date('24.03.15','RR.MM.DD'),'30',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('101',to_date('24.03.16','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('102',to_date('24.03.17','RR.MM.DD'),'60',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('103',to_date('24.03.18','RR.MM.DD'),'20',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('104',to_date('24.03.19','RR.MM.DD'),'70',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1000',to_date('24.03.15','RR.MM.DD'),'30',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1001',to_date('24.03.16','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1002',to_date('24.03.17','RR.MM.DD'),'60',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1003',to_date('24.03.18','RR.MM.DD'),'20',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1004',to_date('24.03.19','RR.MM.DD'),'70',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3000',to_date('24.03.15','RR.MM.DD'),'30',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3001',to_date('24.03.16','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3002',to_date('24.03.17','RR.MM.DD'),'60',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3003',to_date('24.03.18','RR.MM.DD'),'20',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3004',to_date('24.03.19','RR.MM.DD'),'70',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3100',to_date('24.03.15','RR.MM.DD'),'30',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3101',to_date('24.03.16','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3102',to_date('24.03.17','RR.MM.DD'),'60',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3103',to_date('24.03.18','RR.MM.DD'),'20',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3104',to_date('24.03.19','RR.MM.DD'),'70',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9201',to_date('24.03.15','RR.MM.DD'),'30',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9202',to_date('24.03.16','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9203',to_date('24.03.17','RR.MM.DD'),'60',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9204',to_date('24.03.18','RR.MM.DD'),'20',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9205',to_date('24.03.19','RR.MM.DD'),'70',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('2',to_date('24.05.10','RR.MM.DD'),'2000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('3',to_date('24.06.15','RR.MM.DD'),'2500',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('4',to_date('24.07.15','RR.MM.DD'),'1500',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('2001',to_date('24.04.01','RR.MM.DD'),'3000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('2002',to_date('24.05.10','RR.MM.DD'),'2000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('2003',to_date('24.06.15','RR.MM.DD'),'2500',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('2004',to_date('24.07.15','RR.MM.DD'),'1500',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('6001',to_date('24.03.10','RR.MM.DD'),'8000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('6002',to_date('24.07.20','RR.MM.DD'),'12000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('9999',to_date('25.03.26','RR.MM.DD'),'10000',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('1',to_date('25.03.02','RR.MM.DD'),'50',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('500',to_date('25.02.15','RR.MM.DD'),'490',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('105',to_date('25.04.03','RR.MM.DD'),'25',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('106',to_date('25.04.03','RR.MM.DD'),'35',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('107',to_date('25.04.04','RR.MM.DD'),'45',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('108',to_date('25.04.04','RR.MM.DD'),'55',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('201',to_date('25.03.11','RR.MM.DD'),'5',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('202',to_date('25.03.11','RR.MM.DD'),'3',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('203',to_date('25.03.11','RR.MM.DD'),'7',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('501',null,'4',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('502',null,'3',null,null,null);
+Insert into AABDG07.REABASTECIMENTO (ID_REAB,DATA_HORA,QTD_ABASTECIMENTO,ID_VISITA,ID_COMP,ID_VIAGEM) values ('503',null,'6',null,null,null);
+REM INSERTING into AABDG07.ROTA
+SET DEFINE OFF;
+Insert into AABDG07.ROTA (ID_ROTA,NOME,ID_ARMA_PARTIDA,ID_ARMA_DESTINO) values ('1','Rota A','1','2');
+REM INSERTING into AABDG07.ROTA_MAQUINA
+SET DEFINE OFF;
+Insert into AABDG07.ROTA_MAQUINA (ID_ROTA,ID_MAQUINA,ORDEM) values ('1','1','1');
+REM INSERTING into AABDG07.ROTA_VIAG
+SET DEFINE OFF;
+REM INSERTING into AABDG07.STOCK_ARMAZEM
+SET DEFINE OFF;
+REM INSERTING into AABDG07.VEICULO
+SET DEFINE OFF;
+REM INSERTING into AABDG07.VENDA
+SET DEFINE OFF;
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('1',to_date('25.03.15','RR.MM.DD'),'1','MBWAY','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('2',to_date('25.03.15','RR.MM.DD'),'1','DINHEIRO','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('3',to_date('25.03.15','RR.MM.DD'),'1','MBWAY','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('4',to_date('25.03.15','RR.MM.DD'),'1','MBWAY','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('5',to_date('25.03.15','RR.MM.DD'),'1','DINHEIRO','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('6',to_date('25.03.15','RR.MM.DD'),'1','MBWAY','1',null);
+Insert into AABDG07.VENDA (ID_VENDA,DATA_HORA,QUANTIDADE,METODO_PAGAMENTO,ID_MAQUINA,ID_COMP) values ('7',to_date('25.03.15','RR.MM.DD'),'1','MBWAY','1',null);
+REM INSERTING into AABDG07.VIAGEM
+SET DEFINE OFF;
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('3001',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'100',null,null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('3002',to_date('25.04.05','RR.MM.DD'),to_date('25.04.05','RR.MM.DD'),'120',null,null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('1',to_date('25.03.03','RR.MM.DD'),to_date('25.03.03','RR.MM.DD'),'15',null,null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2001',to_date('25.04.01','RR.MM.DD'),to_date('25.04.01','RR.MM.DD'),'15','1',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2002',to_date('25.04.01','RR.MM.DD'),to_date('25.04.01','RR.MM.DD'),'10','2',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2003',to_date('25.04.02','RR.MM.DD'),to_date('25.04.02','RR.MM.DD'),'18','1',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2004',to_date('25.04.02','RR.MM.DD'),to_date('25.04.02','RR.MM.DD'),'12','2',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2005',to_date('25.04.03','RR.MM.DD'),to_date('25.04.03','RR.MM.DD'),'20','1',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2006',to_date('25.04.03','RR.MM.DD'),to_date('25.04.03','RR.MM.DD'),'9','3',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2007',to_date('25.04.04','RR.MM.DD'),to_date('25.04.04','RR.MM.DD'),'16','2',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2008',to_date('25.04.04','RR.MM.DD'),to_date('25.04.04','RR.MM.DD'),'11','1',null);
+Insert into AABDG07.VIAGEM (ID_VIAGEM,DATA_INICIO,DATA_FIM,DISTANCIA_TOTAL,ID_ARMAZEM,ID_VEICULO) values ('2025031105',to_date('25.03.11','RR.MM.DD'),to_date('25.03.11','RR.MM.DD'),'16','4',null);
+REM INSERTING into AABDG07.VIAGEM_FUNC
+SET DEFINE OFF;
+Insert into AABDG07.VIAGEM_FUNC (ID_VIAGEM,ID_FUNC) values ('1','1');
+REM INSERTING into AABDG07.VISITA_MAQUINA
+SET DEFINE OFF;
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('5001',to_date('25.04.05','RR.MM.DD'),'12',null,null,null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1',to_date('25.03.01','RR.MM.DD'),'12','Tudo Ok',null,null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1001',to_date('25.04.01','RR.MM.DD'),'10','Visita de rotina','1',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1002',to_date('25.04.01','RR.MM.DD'),'5','Verificação','2',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1003',to_date('25.04.02','RR.MM.DD'),'12','Reabastecimento','1',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1004',to_date('25.04.02','RR.MM.DD'),'8','Manutenção menor','2',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1005',to_date('25.04.03','RR.MM.DD'),'15','Reabastecimento','1',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1006',to_date('25.04.03','RR.MM.DD'),'7','Verificação','3',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1007',to_date('25.04.04','RR.MM.DD'),'11','Reabastecimento','2',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('1008',to_date('25.04.04','RR.MM.DD'),'9','Visita de rotina','1',null);
+Insert into AABDG07.VISITA_MAQUINA (ID_VISITA,DATA_HORA,KMS_PERCORRIDOS,OBSERVACOES,ID_MAQUINA,ID_VIAGEM) values ('301',to_date('25.04.04','RR.MM.DD'),'10','Visita de rotina','1',null);
+--------------------------------------------------------
+--  DDL for Index SYS_C00680290
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680290" ON "AABDG07"."FUNCIONARIO" ("ID_FUNCIONARIO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680293
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680293" ON "AABDG07"."ESTADO_MAQUINA" ("ID_ESTADO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680309
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680309" ON "AABDG07"."HISTORICO_CONFIG_COMP" ("ID_HIST") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680292
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680292" ON "AABDG07"."VISITA_MAQUINA" ("ID_VISITA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680357
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680357" ON "AABDG07"."MANUT_FUNC" ("ID_MANUTENCAO", "ID_FUNC") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680360
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680360" ON "AABDG07"."ENCOMENDA" ("ID_ENCOMENDA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680291
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680291" ON "AABDG07"."MANUTENCAO" ("ID_MANUTENCAO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680351
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680351" ON "AABDG07"."PRODUTO_VIAGEM" ("ID_VIAGEM", "ID_PRODUTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680294
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680294" ON "AABDG07"."EVENTO_MAQUINA" ("ID_EVENTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680312
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680312" ON "AABDG07"."HIST_CONFCOMP_PROD" ("ID_PRODUTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680343
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680343" ON "AABDG07"."VIAGEM" ("ID_VIAGEM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680368
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680368" ON "AABDG07"."ROTA_VIAG" ("ID_ROTA", "ID_VIAGEM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680326
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680326" ON "AABDG07"."VENDA" ("ID_VENDA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680333
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680333" ON "AABDG07"."ROTA" ("ID_ROTA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680311
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680311" ON "AABDG07"."HIST_CONFCOMP_PROD" ("ID_HIST") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680284
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680284" ON "AABDG07"."STOCK_ARMAZEM" ("ID_STOCK") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680287
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680287" ON "AABDG07"."PRODUTO" ("ID_PRODUTO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680300
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680300" ON "AABDG07"."MAQUINA" ("ID_MAQUINA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680362
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680362" ON "AABDG07"."ENCOMENDA_ARMAZEM" ("ID_ENCOMENDA", "ID_ARMAZEM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680289
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680289" ON "AABDG07"."REABASTECIMENTO" ("ID_REAB") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680306
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680306" ON "AABDG07"."MAQUINA_ESTADO" ("ID_MAQUINA", "ID_ESTADO", "DATA_HORA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680347
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680347" ON "AABDG07"."VEICULO" ("ID_VEICULO") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680354
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680354" ON "AABDG07"."VIAGEM_FUNC" ("ID_VIAGEM", "ID_FUNC") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680282
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680282" ON "AABDG07"."ARMAZEM" ("ID_ARMAZEM") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680316
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680316" ON "AABDG07"."COMPARTIMENTO" ("ID_COMP") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680338
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680338" ON "AABDG07"."ROTA_MAQUINA" ("ID_ROTA", "ID_MAQUINA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  DDL for Index SYS_C00680281
+--------------------------------------------------------
+
+  CREATE UNIQUE INDEX "AABDG07"."SYS_C00680281" ON "AABDG07"."EMPRESA" ("ID_EMPRESA") 
+  PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS" ;
+--------------------------------------------------------
+--  Constraints for Table EVENTO_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."EVENTO_MAQUINA" ADD PRIMARY KEY ("ID_EVENTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ROTA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA" ADD PRIMARY KEY ("ID_ROTA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MAQUINA_ESTADO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MAQUINA_ESTADO" ADD PRIMARY KEY ("ID_MAQUINA", "ID_ESTADO", "DATA_HORA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table STOCK_ARMAZEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."STOCK_ARMAZEM" MODIFY ("ID_ARMAZEM" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."STOCK_ARMAZEM" ADD PRIMARY KEY ("ID_STOCK")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "AABDG07"."STOCK_ARMAZEM" MODIFY ("ID_PRODUTO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table ENCOMENDA_ARMAZEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ENCOMENDA_ARMAZEM" MODIFY ("ID_ARMAZEM" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."ENCOMENDA_ARMAZEM" ADD PRIMARY KEY ("ID_ENCOMENDA", "ID_ARMAZEM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MAQUINA" MODIFY ("ID_ESTADO" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."MAQUINA" MODIFY ("ID_MANUTENCAO" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."MAQUINA" MODIFY ("ID_EMPRESA" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."MAQUINA" ADD PRIMARY KEY ("ID_MAQUINA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ENCOMENDA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ENCOMENDA" ADD PRIMARY KEY ("ID_ENCOMENDA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "AABDG07"."ENCOMENDA" MODIFY ("ID_PRODUTO" NOT NULL ENABLE);
+--------------------------------------------------------
+--  Constraints for Table VISITA_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VISITA_MAQUINA" ADD PRIMARY KEY ("ID_VISITA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table EMPRESA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."EMPRESA" ADD PRIMARY KEY ("ID_EMPRESA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUTO_VIAGEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."PRODUTO_VIAGEM" MODIFY ("ID_VIAGEM" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."PRODUTO_VIAGEM" MODIFY ("ID_PRODUTO" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."PRODUTO_VIAGEM" ADD PRIMARY KEY ("ID_VIAGEM", "ID_PRODUTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VENDA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VENDA" MODIFY ("ID_MAQUINA" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."VENDA" ADD PRIMARY KEY ("ID_VENDA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table PRODUTO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."PRODUTO" ADD PRIMARY KEY ("ID_PRODUTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table FUNCIONARIO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."FUNCIONARIO" ADD PRIMARY KEY ("ID_FUNCIONARIO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ARMAZEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ARMAZEM" ADD PRIMARY KEY ("ID_ARMAZEM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table HIST_CONFCOMP_PROD
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."HIST_CONFCOMP_PROD" MODIFY ("ID_PRODUTO" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."HIST_CONFCOMP_PROD" ADD PRIMARY KEY ("ID_HIST")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+ 
+  ALTER TABLE "AABDG07"."HIST_CONFCOMP_PROD" ADD UNIQUE ("ID_PRODUTO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ROTA_VIAG
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA_VIAG" ADD PRIMARY KEY ("ID_ROTA", "ID_VIAGEM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VEICULO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VEICULO" ADD PRIMARY KEY ("ID_VEICULO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VIAGEM_FUNC
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VIAGEM_FUNC" ADD PRIMARY KEY ("ID_VIAGEM", "ID_FUNC")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MANUT_FUNC
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MANUT_FUNC" ADD PRIMARY KEY ("ID_MANUTENCAO", "ID_FUNC")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ROTA_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA_MAQUINA" MODIFY ("ID_ROTA" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."ROTA_MAQUINA" MODIFY ("ID_MAQUINA" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."ROTA_MAQUINA" ADD PRIMARY KEY ("ID_ROTA", "ID_MAQUINA")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table REABASTECIMENTO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."REABASTECIMENTO" ADD PRIMARY KEY ("ID_REAB")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table VIAGEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VIAGEM" ADD PRIMARY KEY ("ID_VIAGEM")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table HISTORICO_CONFIG_COMP
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."HISTORICO_CONFIG_COMP" ADD PRIMARY KEY ("ID_HIST")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table COMPARTIMENTO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."COMPARTIMENTO" MODIFY ("ID_PRODUTO" NOT NULL ENABLE);
+ 
+  ALTER TABLE "AABDG07"."COMPARTIMENTO" ADD PRIMARY KEY ("ID_COMP")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table ESTADO_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ESTADO_MAQUINA" ADD PRIMARY KEY ("ID_ESTADO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Constraints for Table MANUTENCAO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MANUTENCAO" ADD PRIMARY KEY ("ID_MANUTENCAO")
+  USING INDEX PCTFREE 10 INITRANS 2 MAXTRANS 255 COMPUTE STATISTICS 
+  STORAGE(INITIAL 65536 NEXT 1048576 MINEXTENTS 1 MAXEXTENTS 2147483645
+  PCTINCREASE 0 FREELISTS 1 FREELIST GROUPS 1 BUFFER_POOL DEFAULT FLASH_CACHE DEFAULT CELL_FLASH_CACHE DEFAULT)
+  TABLESPACE "USERS"  ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table COMPARTIMENTO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."COMPARTIMENTO" ADD CONSTRAINT "FK_COMP_MAQUINA" FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."COMPARTIMENTO" ADD FOREIGN KEY ("ID_HIST_CONFIG")
+	  REFERENCES "AABDG07"."HISTORICO_CONFIG_COMP" ("ID_HIST") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."COMPARTIMENTO" ADD FOREIGN KEY ("ID_PRODUTO")
+	  REFERENCES "AABDG07"."PRODUTO" ("ID_PRODUTO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ENCOMENDA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ENCOMENDA" ADD CONSTRAINT "FK_ENCOMENDA_PRODUTO" FOREIGN KEY ("ID_PRODUTO")
+	  REFERENCES "AABDG07"."PRODUTO" ("ID_PRODUTO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ENCOMENDA_ARMAZEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ENCOMENDA_ARMAZEM" ADD FOREIGN KEY ("ID_ENCOMENDA")
+	  REFERENCES "AABDG07"."ENCOMENDA" ("ID_ENCOMENDA") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."ENCOMENDA_ARMAZEM" ADD FOREIGN KEY ("ID_ARMAZEM")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table EVENTO_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."EVENTO_MAQUINA" ADD CONSTRAINT "FK_EVENTO_MAQUINA" FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table HIST_CONFCOMP_PROD
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."HIST_CONFCOMP_PROD" ADD FOREIGN KEY ("ID_HIST")
+	  REFERENCES "AABDG07"."HISTORICO_CONFIG_COMP" ("ID_HIST") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."HIST_CONFCOMP_PROD" ADD FOREIGN KEY ("ID_PRODUTO")
+	  REFERENCES "AABDG07"."PRODUTO" ("ID_PRODUTO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MANUTENCAO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MANUTENCAO" ADD CONSTRAINT "FK_MANUTENCAO_MAQUINA" FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MANUT_FUNC
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MANUT_FUNC" ADD FOREIGN KEY ("ID_MANUTENCAO")
+	  REFERENCES "AABDG07"."MANUTENCAO" ("ID_MANUTENCAO") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."MANUT_FUNC" ADD FOREIGN KEY ("ID_FUNC")
+	  REFERENCES "AABDG07"."FUNCIONARIO" ("ID_FUNCIONARIO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MAQUINA" ADD FOREIGN KEY ("ID_ESTADO")
+	  REFERENCES "AABDG07"."ESTADO_MAQUINA" ("ID_ESTADO") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."MAQUINA" ADD FOREIGN KEY ("ID_MANUTENCAO")
+	  REFERENCES "AABDG07"."MANUTENCAO" ("ID_MANUTENCAO") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."MAQUINA" ADD FOREIGN KEY ("ID_EMPRESA")
+	  REFERENCES "AABDG07"."EMPRESA" ("ID_EMPRESA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table MAQUINA_ESTADO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."MAQUINA_ESTADO" ADD FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."MAQUINA_ESTADO" ADD FOREIGN KEY ("ID_ESTADO")
+	  REFERENCES "AABDG07"."ESTADO_MAQUINA" ("ID_ESTADO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table PRODUTO_VIAGEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."PRODUTO_VIAGEM" ADD FOREIGN KEY ("ID_VIAGEM")
+	  REFERENCES "AABDG07"."VIAGEM" ("ID_VIAGEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."PRODUTO_VIAGEM" ADD FOREIGN KEY ("ID_PRODUTO")
+	  REFERENCES "AABDG07"."PRODUTO" ("ID_PRODUTO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table REABASTECIMENTO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."REABASTECIMENTO" ADD CONSTRAINT "FK_REAB_COMP" FOREIGN KEY ("ID_COMP")
+	  REFERENCES "AABDG07"."COMPARTIMENTO" ("ID_COMP") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."REABASTECIMENTO" ADD CONSTRAINT "FK_REAB_VIAGEM" FOREIGN KEY ("ID_VIAGEM")
+	  REFERENCES "AABDG07"."VIAGEM" ("ID_VIAGEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."REABASTECIMENTO" ADD CONSTRAINT "FK_REAB_VISITA" FOREIGN KEY ("ID_VISITA")
+	  REFERENCES "AABDG07"."VISITA_MAQUINA" ("ID_VISITA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ROTA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA" ADD FOREIGN KEY ("ID_ARMA_PARTIDA")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."ROTA" ADD FOREIGN KEY ("ID_ARMA_DESTINO")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ROTA_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA_MAQUINA" ADD FOREIGN KEY ("ID_ROTA")
+	  REFERENCES "AABDG07"."ROTA" ("ID_ROTA") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."ROTA_MAQUINA" ADD FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table ROTA_VIAG
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."ROTA_VIAG" ADD FOREIGN KEY ("ID_ROTA")
+	  REFERENCES "AABDG07"."ROTA" ("ID_ROTA") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."ROTA_VIAG" ADD FOREIGN KEY ("ID_VIAGEM")
+	  REFERENCES "AABDG07"."VIAGEM" ("ID_VIAGEM") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table STOCK_ARMAZEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."STOCK_ARMAZEM" ADD FOREIGN KEY ("ID_ARMAZEM")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."STOCK_ARMAZEM" ADD FOREIGN KEY ("ID_PRODUTO")
+	  REFERENCES "AABDG07"."PRODUTO" ("ID_PRODUTO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VEICULO
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VEICULO" ADD FOREIGN KEY ("ID_ARMAZEM")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VENDA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VENDA" ADD CONSTRAINT "FK_VENDA_COMP" FOREIGN KEY ("ID_COMP")
+	  REFERENCES "AABDG07"."COMPARTIMENTO" ("ID_COMP") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."VENDA" ADD FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VIAGEM
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VIAGEM" ADD CONSTRAINT "FK_VIAGEM_ARMAZEM" FOREIGN KEY ("ID_ARMAZEM")
+	  REFERENCES "AABDG07"."ARMAZEM" ("ID_ARMAZEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."VIAGEM" ADD CONSTRAINT "FK_VIAGEM_VEICULO" FOREIGN KEY ("ID_VEICULO")
+	  REFERENCES "AABDG07"."VEICULO" ("ID_VEICULO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VIAGEM_FUNC
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VIAGEM_FUNC" ADD FOREIGN KEY ("ID_VIAGEM")
+	  REFERENCES "AABDG07"."VIAGEM" ("ID_VIAGEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."VIAGEM_FUNC" ADD FOREIGN KEY ("ID_FUNC")
+	  REFERENCES "AABDG07"."FUNCIONARIO" ("ID_FUNCIONARIO") ENABLE;
+--------------------------------------------------------
+--  Ref Constraints for Table VISITA_MAQUINA
+--------------------------------------------------------
+
+  ALTER TABLE "AABDG07"."VISITA_MAQUINA" ADD CONSTRAINT "FK_VISITA_VIAGEM" FOREIGN KEY ("ID_VIAGEM")
+	  REFERENCES "AABDG07"."VIAGEM" ("ID_VIAGEM") ENABLE;
+ 
+  ALTER TABLE "AABDG07"."VISITA_MAQUINA" ADD CONSTRAINT "FK_VM_MAQUINA" FOREIGN KEY ("ID_MAQUINA")
+	  REFERENCES "AABDG07"."MAQUINA" ("ID_MAQUINA") ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger ABASTECE
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."ABASTECE" 
+BEFORE INSERT ON reabastecimento
+FOR EACH ROW
+DECLARE
+    v_qtd_max    NUMBER;
+    v_qtd_atual  NUMBER;
+    v_espaco NUMBER;
+BEGIN
+    -- Caso a quantidade seja nula ou negativa
+    IF :NEW.qtd_abastecimento <= 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Quantidade inválida: deve ser positiva');
+    END IF;
+
+    -- Capacidade do compartimento
+    SELECT qtd_max, qtd_atual
+    INTO v_qtd_max, v_qtd_atual
+    FROM compartimento
+    WHERE id_comp = :NEW.id_comp;
+
+    v_espaco := v_qtd_max - v_qtd_atual;
+
+    -- Para verificar se há espaço suficiente
+    IF :NEW.qtd_abastecimento > v_espaco THEN
+        RAISE_APPLICATION_ERROR(-20002, 'Quantidade excede a capacidade disponível no compartimento');
+    END IF;
+END;
+/
+ALTER TRIGGER "AABDG07"."ABASTECE" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger ATUALIZA_COMPARTIMENTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."ATUALIZA_COMPARTIMENTO" 
+AFTER INSERT ON reabastecimento
+FOR EACH ROW
+BEGIN
+    UPDATE compartimento
+    SET qtd_atual = qtd_atual + :NEW.qtd_abastecimento
+    WHERE id_comp = :NEW.id_comp;
+END;
+/
+ALTER TRIGGER "AABDG07"."ATUALIZA_COMPARTIMENTO" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger R_TRIG_2021130905
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."R_TRIG_2021130905" 
+AFTER INSERT ON venda
+FOR EACH ROW
+DECLARE
+    v_id_produto   NUMBER;
+    v_id_maquina   NUMBER;
+    v_id_armazem   NUMBER;
+BEGIN
+    -- Obtem produto e máquina a partir do compartimento vendido
+    SELECT c.id_produto, c.id_maquina
+    INTO v_id_produto, v_id_maquina
+    FROM compartimento c
+    WHERE c.id_comp = :NEW.id_comp;
+
+    -- Obtem o armazém da viagem mais recente que visitou a máquina
+    SELECT id_armazem
+    INTO v_id_armazem
+    FROM (
+        SELECT v.id_armazem
+        FROM visita_maquina vm
+        JOIN viagem v ON vm.id_viagem = v.id_viagem
+        WHERE vm.id_maquina = v_id_maquina
+        ORDER BY vm.data_hora DESC
+    )
+    WHERE ROWNUM = 1;
+
+    -- Atualiza o stock disponível no armazém
+    UPDATE stock_armazem
+    SET quantidade_disponivel = quantidade_disponivel - :NEW.quantidade
+    WHERE id_armazem = v_id_armazem
+      AND id_produto = v_id_produto;
+END;
+/
+ALTER TRIGGER "AABDG07"."R_TRIG_2021130905" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger TRIG_2021129697
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."TRIG_2021129697" 
+AFTER UPDATE ON STOCK_ARMAZEM
+FOR EACH ROW
+DECLARE
+    MSG VARCHAR2(400);
+BEGIN
+    -- VERIFICA SE A NOVA QUANTIDADE É INFERIOR A 5
+    IF :NEW.QUANTIDADE_DISPONIVEL < 5 THEN
+
+        MSG := 'AVISO: STOCK BAIXO! PRODUTO ' || :NEW.ID_PRODUTO ||
+                 ' NO ARMAZEM ' || :NEW.ID_ARMAZEM || 
+                 ' TEM APENAS ' || :NEW.QUANTIDADE_DISPONIVEL || ' UNIDADES.';
+
+
+        DBMS_OUTPUT.PUT_LINE(MSG);
+    END IF;
+END;
+
+/
+ALTER TRIGGER "AABDG07"."TRIG_2021129697" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_STOCK
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."UPDATE_STOCK" 
+AFTER INSERT ON venda
+FOR EACH ROW
+DECLARE
+    v_qtd_atual       compartimento.qtd_atual%TYPE;
+    v_total_estoque   NUMBER;
+    v_id_produto      compartimento.id_produto%TYPE;
+    v_id_estado_sem_stock estado_maquina.id_estado%TYPE;
+BEGIN
+    -- Atualizar a quantidade do compartimento
+    UPDATE compartimento
+    SET qtd_atual = qtd_atual - :NEW.quantidade
+    WHERE id_comp = :NEW.id_comp;
+
+    -- Obter a nova quantidade
+    SELECT qtd_atual INTO v_qtd_atual
+    FROM compartimento
+    WHERE id_comp = :NEW.id_comp;
+
+    -- Verifica se quantidade ficou negativa
+    IF v_qtd_atual < 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Quantidade de produto insuficiente no compartimento.');
+    END IF;
+
+    -- Obter o id_produto do compartimento
+    SELECT id_produto INTO v_id_produto
+    FROM compartimento
+    WHERE id_comp = :NEW.id_comp;
+
+    -- Calcular o total desse produto na máquina
+    SELECT SUM(qtd_atual) INTO v_total_estoque
+    FROM compartimento
+    WHERE id_maquina = :NEW.id_maquina
+      AND id_produto = v_id_produto;
+
+    -- Tratar NULL como zero
+    IF v_total_estoque IS NULL THEN
+        v_total_estoque := 0;
+    END IF;
+
+    -- Se não há stock, regista estado "SEM STOCK"
+    IF v_total_estoque <= 0 THEN
+        -- Obter o ID do estado "SEM STOCK"
+        SELECT id_estado INTO v_id_estado_sem_stock
+        FROM estado_maquina
+        WHERE UPPER(estado) = 'SEM STOCK';
+
+        -- Inserir novo estado na tabela associativa
+        INSERT INTO maquina_estado (
+            id_maquina,
+            id_estado,
+            data_hora
+        ) VALUES (
+            :NEW.id_maquina,
+            v_id_estado_sem_stock,
+            SYSDATE
+        );
+    END IF;
+END;
+/
+ALTER TRIGGER "AABDG07"."UPDATE_STOCK" ENABLE;
+--------------------------------------------------------
+--  DDL for Trigger UPDATE_VIAGEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE TRIGGER "AABDG07"."UPDATE_VIAGEM" 
+AFTER INSERT ON REABASTECIMENTO
+FOR EACH ROW
+DECLARE
+    ID_PRODUTO_2 NUMBER; 
+BEGIN
+    -- BUSCAR O ID DO PRODUTO A PARTIR DO COMPARTIMENTO
+    SELECT ID_PRODUTO
+    INTO ID_PRODUTO_2
+    FROM COMPARTIMENTO
+    WHERE ID_COMP = :NEW.ID_COMP;
+
+    -- ATUALIZAR A TABELA PRODUTO_VIAGEM
+    UPDATE PRODUTO_VIAGEM
+    SET QTD_ATUAL = QTD_ATUAL - :NEW.QTD_ABASTECIMENTO
+    WHERE ID_PRODUTO = ID_PRODUTO_2
+    AND ID_VIAGEM = :NEW.ID_VIAGEM;
+END;
+/
+ALTER TRIGGER "AABDG07"."UPDATE_VIAGEM" ENABLE;
+--------------------------------------------------------
+--  DDL for Function DATA_ULTIMO_ABASTEC
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."DATA_ULTIMO_ABASTEC" (
+    idmaquina IN NUMBER,
+    idproduto IN NUMBER
+) RETURN DATE IS
+    v_data DATE;
+    v_count INTEGER;
+BEGIN
+    -- Verificar se a máquina existe
+    SELECT COUNT(*) INTO v_count
+    FROM maquina
+    WHERE id_maquina = idmaquina;
+
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20801, 'Máquina não existe.');
+    END IF;
+
+    -- Obter a data do último abastecimento do produto nessa máquina
+    SELECT MAX(r.data_hora)
+    INTO v_data
+    FROM reabastecimento r
+    JOIN compartimento c ON r.id_comp = c.id_comp
+    WHERE c.id_maquina = idmaquina
+      AND c.id_produto = idproduto;
+
+    -- Verifica se não existe abastecimento
+    IF v_data IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Produto nunca abastecido nessa máquina.');
+    END IF;
+
+    RETURN v_data;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function DISTANCIA_ENTRE_MAQUINAS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."DISTANCIA_ENTRE_MAQUINAS" (
+    idmaquina1 IN NUMBER,
+    idmaquina2 IN NUMBER
+) RETURN NUMBER IS
+    lat1 maquina.latitude%TYPE;
+    lon1 maquina.longitude%TYPE;
+    lat2 maquina.latitude%TYPE;
+    lon2 maquina.longitude%TYPE;
+    v_maquina1_existe NUMBER;
+    v_maquina2_existe NUMBER;
+    v_distancia NUMBER;
+BEGIN
+    -- Verifica se as máquinas são diferentes
+    IF idmaquina1 = idmaquina2 THEN
+        RAISE_APPLICATION_ERROR(-20810, 'Máquinas inválidas. Devem ser diferentes.');
+    END IF;
+
+    -- Verifica se máquina 1 existe
+    SELECT COUNT(*) INTO v_maquina1_existe FROM maquina WHERE id_maquina = idmaquina1;
+    IF v_maquina1_existe = 0 THEN
+        RAISE_APPLICATION_ERROR(-20801, 'Código de máquina inexistente');
+    END IF;
+
+    -- Verifica se máquina 2 existe
+    SELECT COUNT(*) INTO v_maquina2_existe FROM maquina WHERE id_maquina = idmaquina2;
+    IF v_maquina2_existe = 0 THEN
+        RAISE_APPLICATION_ERROR(-20801, 'Código de máquina inexistente');
+    END IF;
+
+    -- Coordenadas da máquina 1
+    SELECT latitude, longitude INTO lat1, lon1
+    FROM maquina
+    WHERE id_maquina = idmaquina1;
+
+    -- Coordenadas da máquina 2
+    SELECT latitude, longitude INTO lat2, lon2
+    FROM maquina
+    WHERE id_maquina = idmaquina2;
+
+    -- Usa a função distancia_linear para calcular a distância
+    v_distancia := distancia_linear(lat1, lon1, lat2, lon2);
+
+    RETURN v_distancia;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function DISTANCIA_LINEAR
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."DISTANCIA_LINEAR" (LAT1  NUMBER,LON1  NUMBER,LAT2  NUMBER,LON2  NUMBER) 
+RETURN NUMBER
+IS
+    R NUMBER := 6371; -- Raio da Terra em Kms
+    PI CONSTANT NUMBER := 3.141592653589793;
+    D_LAT NUMBER ;
+    D_LON NUMBER ;
+    A NUMBER ;
+    D NUMBER ;
+BEGIN
+    D_LAT := (LAT2 - LAT1) * PI / 180;
+    D_LON := (LON2 - LON1) * PI / 180;
+    A := SIN(D_LAT/2) * SIN(D_LAT/2) + COS(LAT1*PI/180) * COS(LAT2*PI/180) * SIN(D_LON/2) * SIN(D_LON/2);
+    D := R * (2 * ATAN2(SQRT(A), SQRT(1 - A)));
+    RETURN ROUND(D,3);
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function DISTANCIA_VIAGEM
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."DISTANCIA_VIAGEM" (IDVIAGEM NUMBER)
+RETURN NUMBER
+IS
+    LAT1 NUMBER;
+    LON1 NUMBER;
+    DISTANCIA_TOTAL NUMBER := 0;
+
+    CURSOR C_MAQUINAS IS
+    SELECT M.LATITUDE, M.LONGITUDE
+    FROM VIAGEM V
+    JOIN ROTA_VIAG RV ON RV.ID_VIAGEM = V.ID_VIAGEM
+    JOIN ROTA R ON R.ID_ROTA = RV.ID_ROTA
+    JOIN ROTA_MAQUINA RM ON RM.ID_ROTA = R.ID_ROTA
+    JOIN MAQUINA M ON M.ID_MAQUINA = RM.ID_MAQUINA
+    WHERE V.ID_VIAGEM = IDVIAGEM
+    ORDER BY RM.ORDEM;
+
+    LAT_ARMAZEM FLOAT;
+    LON_ARMAZEM FLOAT;
+BEGIN
+    --APANHAR LAT E LONG ARMAZEM PARTIDA/CHEGADA
+    SELECT A.LATITUDE, A.LONGITUDE
+    INTO LAT_ARMAZEM, LON_ARMAZEM
+    FROM VIAGEM V
+    JOIN ARMAZEM A ON A.ID_ARMAZEM = V.ID_ARMAZEM
+    WHERE V.ID_VIAGEM = IDVIAGEM;
+
+    --INICIALIZAR COM LAT E LONG DO ARMAZEM DE PARTIDA
+    LAT1 := LAT_ARMAZEM;
+    LON1 := LON_ARMAZEM;
+    --PERCORRER AS MAQUINAS E SOMAR AS DISTANCIAS
+    FOR MAQUINA IN C_MAQUINAS LOOP
+        DISTANCIA_TOTAL := DISTANCIA_TOTAL + DISTANCIA_LINEAR(LAT1, LON1, MAQUINA.LATITUDE, MAQUINA.LONGITUDE);
+        --ATUALIZAR AS COORDENADAS PARA A NOVA MÁQUINA
+        LAT1 := MAQUINA.LATITUDE;
+        LON1 := MAQUINA.LONGITUDE;
+    END LOOP;
+    --SOMAR DISTANCIA DA ULTIMA MÁQUINA DA ROTA ATÉ AO ARMAZEM DE CHEGADA
+    DISTANCIA_TOTAL := DISTANCIA_TOTAL + DISTANCIA_LINEAR(LAT1, LON1, LAT_ARMAZEM, LON_ARMAZEM);
+
+    RETURN DISTANCIA_TOTAL;
+
+    EXCEPTION
+        WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20807, 'VIAGEM OU ARMAZÉM NÃO EXISTE');
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function FUNC_2021129697
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."FUNC_2021129697" (ID_MAQUINA2 IN NUMBER,ANO IN NUMBER,MES IN NUMBER) 
+RETURN NUMBER IS
+
+    TOTAL_EUROS NUMBER := 0;
+
+BEGIN
+
+    SELECT SUM(V.QUANTIDADE * C.PRECO)
+    INTO TOTAL_EUROS
+    FROM VENDA V, COMPARTIMENTO C
+    WHERE V.ID_COMP = C.ID_COMP
+    AND V.ID_MAQUINA = ID_MAQUINA2
+    AND EXTRACT(YEAR FROM V.DATA_HORA) = ANO
+    AND EXTRACT(MONTH FROM V.DATA_HORA) = MES;
+
+    RETURN TOTAL_EUROS;
+
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function MAQUINA_MAIS_PROXIMA
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."MAQUINA_MAIS_PROXIMA" (
+    idproduto IN NUMBER,
+    lat       IN NUMBER,
+    long      IN NUMBER
+) RETURN NUMBER IS
+    -- Variáveis para resultado
+    v_melhor_maquina   maquina.id_maquina%TYPE := NULL;
+    v_menor_distancia  NUMBER := NULL;
+    v_distancia_atual  NUMBER;
+BEGIN
+    -- Loop sobre todas as máquinas com o produto em algum compartimento
+    FOR rec IN (
+        SELECT DISTINCT m.id_maquina, m.latitude, m.longitude
+        FROM maquina m
+        JOIN compartimento c ON m.id_maquina = c.id_maquina
+        WHERE c.id_produto = idproduto
+          AND c.qtd_atual > 0
+    ) LOOP
+        -- Calcular distância usando a função existente
+        v_distancia_atual := distancia_linear(lat, long, rec.latitude, rec.longitude);
+
+        -- Verificar se é a menor distância até agora
+        IF v_menor_distancia IS NULL OR v_distancia_atual < v_menor_distancia THEN
+            v_menor_distancia := v_distancia_atual;
+            v_melhor_maquina := rec.id_maquina;
+        END IF;
+    END LOOP;
+
+    -- Se nenhuma máquina for encontrada, lançar erro
+    IF v_melhor_maquina IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Nenhuma máquina com o produto disponível.');
+    END IF;
+
+    RETURN v_melhor_maquina;
+END maquina_mais_proxima;
+
+/
+--------------------------------------------------------
+--  DDL for Function NUM_PRODUTOS_REABASTECIDOS
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."NUM_PRODUTOS_REABASTECIDOS" (reabastecimento_id IN INTEGER) RETURN NUMBER IS
+    qtd NUMBER;
+BEGIN
+    SELECT COUNT(DISTINCT id_produto) INTO qtd FROM compartimento WHERE reabastecimento_id = reabastecimento_id;
+    RETURN qtd;
+END; -- Nº de produtos diferentes reabastecidos
+
+/
+--------------------------------------------------------
+--  DDL for Function P_FUNC_2021130905
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."P_FUNC_2021130905" (
+    id_prod    IN NUMBER,
+    data_ini   IN DATE,
+    data_fim   IN DATE DEFAULT SYSDATE
+) RETURN NUMBER IS
+    v_media NUMBER := 0;
+    v_exists NUMBER := 0;
+BEGIN
+    -- Verifica se o produto existe
+    SELECT COUNT(*) INTO v_exists
+    FROM produto
+    WHERE id_produto = id_prod;
+
+    IF v_exists = 0 THEN
+        RAISE_APPLICATION_ERROR(-20901, 'Produto inexistente');
+    END IF;
+
+    -- Verifica se intervalo de datas é válido
+    IF data_ini > data_fim THEN
+        RAISE_APPLICATION_ERROR(-20902, 'Intervalo de datas inválido');
+    END IF;
+
+    -- Calcula média da quantidade vendida por máquina no intervalo
+    SELECT AVG(qtd_por_maquina)
+    INTO v_media
+    FROM (
+        SELECT v.id_maquina, SUM(v.quantidade) AS qtd_por_maquina
+        FROM venda v
+        JOIN compartimento c ON v.id_comp = c.id_comp
+        WHERE c.id_produto = id_prod
+          AND v.data_hora BETWEEN data_ini AND data_fim
+        GROUP BY v.id_maquina
+    );
+
+    RETURN NVL(v_media, 0);
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function PROX_MAQUINA_SEM_PRODUTO
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."PROX_MAQUINA_SEM_PRODUTO" (IDPRODUTO IN NUMBER,IDMAQUINA IN NUMBER) 
+RETURN NUMBER 
+IS
+    LAT1 NUMBER;
+    LON1 NUMBER;
+    DISTANCIA_MINIMA NUMBER := 99999;
+    ID_MAQUINA_MAIS_PROX NUMBER :=0;
+    DIST_ATUAL NUMBER;
+
+    --SELECIONA TODAS AS MAQUINAS QUE VENDAM O PRODUTO MAS QUE NESTE MOMENTO ESTEJA SEM STOCK DESSE PRODUTO
+    CURSOR C_MAQUINAS IS
+        SELECT M.ID_MAQUINA, M.LATITUDE, M.LONGITUDE
+        FROM MAQUINA M
+        JOIN COMPARTIMENTO C ON C.ID_MAQUINA=M.ID_MAQUINA
+        JOIN PRODUTO P ON P.ID_PRODUTO=C.ID_PRODUTO
+        WHERE C.QTD_ATUAL = 0
+        AND P.ID_PRODUTO = IDPRODUTO
+        AND M.ID_MAQUINA != IDMAQUINA;
+
+BEGIN
+    --APANHA LATITUDE E LONGITUDE DA MAQUINA PASSADA EM ARGUMENTO
+    SELECT LATITUDE, LONGITUDE
+    INTO LAT1, LON1
+    FROM MAQUINA
+    WHERE ID_MAQUINA = IDMAQUINA;
+
+    --PERCORRE TODAS AS MAQUINAS E CALCULA A DISTANCIA PARA APANHAR A COM MENOR DISTANCIA
+    FOR MAQUINA IN C_MAQUINAS LOOP
+        DIST_ATUAL := DISTANCIA_LINEAR(LAT1, LON1, MAQUINA.LATITUDE, MAQUINA.LONGITUDE);
+
+        IF DIST_ATUAL<DISTANCIA_MINIMA THEN
+            DISTANCIA_MINIMA := DIST_ATUAL;
+            ID_MAQUINA_MAIS_PROX := MAQUINA.ID_MAQUINA;
+        END IF;
+
+    END LOOP;
+
+    IF ID_MAQUINA_MAIS_PROX != 0 THEN
+        RETURN ID_MAQUINA_MAIS_PROX;
+    ELSE
+        RAISE_APPLICATION_ERROR(-20802, 'Não existe uma maquina com o compartimento do produto sem stock');
+    END IF;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function QUANTIDADE_EM_FALTA
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."QUANTIDADE_EM_FALTA" (
+    idmaquina IN NUMBER,
+    idproduto IN NUMBER
+) RETURN NUMBER IS
+    v_qtdEmFalta NUMBER := 0;
+    v_existeMaquina NUMBER;
+    v_existeProduto NUMBER;
+BEGIN
+    SELECT COUNT(*) INTO v_existeMaquina FROM maquina WHERE id_maquina = idmaquina;
+    IF v_existeMaquina = 0 THEN
+      RAISE_APPLICATION_ERROR(-20801, 'Máquina inexistente');
+    END IF;
+    
+    SELECT COUNT(*) INTO v_existeProduto FROM produto WHERE id_produto = idproduto;
+    IF v_existeProduto = 0 THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Produto inexistente');
+    END IF;
+    
+    SELECT SUM(c.qtd_max - c.qtd_atual) INTO v_qtdEmFalta FROM compartimento c
+    WHERE c.id_maquina = idmaquina AND c.id_produto = idproduto;
+
+    RETURN NVL(v_qtdEmFalta, 0);
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function QUANTIDADE_MEDIA_DIARIA
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."QUANTIDADE_MEDIA_DIARIA" (IDMAQUINA NUMBER, CODCOMPART VARCHAR2)
+RETURN NUMBER
+IS
+    TOTAL_VENDIDO NUMBER := 0;  -- QUANTIDADE TOTAL VENDIDA DESDE ESSA DATA
+    NUM_DIAS NUMBER;            -- NÚMERO DE DIAS ENTRE A DATA E HOJE
+    MEDIA_DIARIA NUMBER;        -- MÉDIA FINAL
+    NUM_REABASTECIMENTOS NUMBER;-- NÚMERO DE REABASTECIMENTOS
+    ID_COMPART NUMBER;          -- ID DO COMPARTIMENTO
+    DATA_PENULTIMO_REAB DATE;   -- DATA PENULTIMO REABASTECIMENTO
+BEGIN
+
+    -- OBTER O ID_COMP DO COMPARTIMENTO BASEADO NA MAQUINA E CODIGO DO COMPARTIMENTO
+    SELECT ID_COMP INTO ID_COMPART
+    FROM COMPARTIMENTO
+    WHERE ID_MAQUINA = IDMAQUINA
+    AND COD_COMP = CODCOMPART;
+
+    -- VERIFICA SE EXISTEM PELO MENOS DOIS REABASTECIMENTOS PARA SABER SE HÁ PENULTIMO
+    SELECT COUNT(*) INTO NUM_REABASTECIMENTOS
+    FROM REABASTECIMENTO R
+    JOIN COMPARTIMENTO C ON R.ID_COMP=C.ID_COMP
+    WHERE C.ID_MAQUINA=IDMAQUINA
+    AND C.COD_COMP=CODCOMPART;
+
+    IF NUM_REABASTECIMENTOS < 2 THEN
+        RAISE_APPLICATION_ERROR(-20802, 'NAO EXISTE PENULTIMO REABASTECIMENTO');
+    END IF;
+
+    --APANHAR A DATA DO PENULTIMO REABASTECIMENTO
+    SELECT DATA_HORA INTO DATA_PENULTIMO_REAB 
+    FROM(
+        SELECT ROWNUM AS LINHA, DATA_HORA
+        FROM(
+            SELECT DATA_HORA
+            FROM REABASTECIMENTO
+            WHERE ID_COMP=ID_COMPART
+            ORDER BY DATA_HORA DESC
+        )
+    )
+    WHERE LINHA=2;
+
+    -- CALCULAR A QUANTIDADE TOTAL VENDIDA DESDE O PENÚLTIMO REABASTECIMENTO
+    SELECT SUM(C.PRECO*V.QUANTIDADE)
+    INTO TOTAL_VENDIDO
+    FROM COMPARTIMENTO C
+    JOIN VENDA V ON C.ID_COMP=V.ID_COMP
+    WHERE V.ID_COMP = ID_COMPART
+    AND C.ID_MAQUINA = IDMAQUINA
+    AND V.DATA_HORA >= DATA_PENULTIMO_REAB;
+
+    IF TOTAL_VENDIDO IS NULL OR TOTAL_VENDIDO = 0 THEN
+    RAISE_APPLICATION_ERROR(-20801, 'NAO FORAM EFETUADAS VENDAS DESDE O PENULTIMO REABASTECIMENTO');
+    END IF;
+
+    -- CALCULAR O NÚMERO DE DIAS QUE PASSARAM DESDE O ULTIMO REABASTECIMENTO
+    NUM_DIAS := TRUNC(SYSDATE) - TRUNC(DATA_PENULTIMO_REAB);
+
+    -- CALCULAR A MÉDIA
+    MEDIA_DIARIA := TOTAL_VENDIDO / NUM_DIAS;
+
+    RETURN MEDIA_DIARIA;
+
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Function QUANTIDADE_VENDIDA
+--------------------------------------------------------
+
+  CREATE OR REPLACE FUNCTION "AABDG07"."QUANTIDADE_VENDIDA" (
+  idmaquina IN NUMBER,
+  idproduto IN NUMBER,
+  dataInicio IN DATE,
+  dataFim IN DATE := SYSDATE) 
+RETURN NUMBER
+IS
+  v_totalVendas NUMBER;
+  v_existeMaquina NUMBER;
+  v_existeProduto NUMBER;
+BEGIN
+  SELECT COUNT(*) INTO v_existeMaquina FROM maquina WHERE id_maquina = idmaquina;
+  IF v_existeMaquina = 0 THEN
+    RAISE_APPLICATION_ERROR(-20801, 'Máquina inexistente');
+  END IF;
+
+  SELECT COUNT(*) INTO v_existeProduto FROM produto WHERE id_produto = idproduto;
+    IF v_existeProduto = 0 THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Produto inexistente');
+    END IF;
+
+  SELECT SUM(v.quantidade) INTO v_totalVendas FROM venda v
+  JOIN compartimento c ON v.id_comp = c.id_comp
+  WHERE v.id_maquina = idmaquina
+  AND c.id_produto = idproduto
+  AND v.data_hora BETWEEN dataInicio AND dataFim;
+  
+  IF v_totalVendas IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20809, 'Inválido intervalo temporal');
+    END IF;
+
+    RETURN v_totalVendas;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ABASTECE_PRODUTO
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."ABASTECE_PRODUTO" (COD_ARMAZEM IN NUMBER, COD_PRODUTO IN NUMBER, QUANTIDADE IN NUMBER)
+IS
+    --CURSOR PARA OBTER OS COMPARTIMENTOS COM MAIOR RUTURA DE STOCK (QUANTIDADE ATUAL + BAIXA)
+    CURSOR C_COMPARTIMENTOS IS
+        SELECT C.ID_COMP, C.ID_MAQUINA, C.QTD_ATUAL, C.QTD_MAX, M.LATITUDE, M.LONGITUDE
+        FROM COMPARTIMENTO C
+        JOIN MAQUINA M ON M.ID_MAQUINA = C.ID_MAQUINA
+        WHERE C.ID_PRODUTO = COD_PRODUTO
+        AND C.QTD_ATUAL < C.QTD_MAX
+        ORDER BY QTD_ATUAL ASC;
+
+    ARM_EXISTE NUMBER;
+    PROD_EXISTE NUMBER;
+    MAQ_PRECISA_STOCK_EXISTE NUMBER;
+    LAT_ARMAZEM NUMBER;
+    LON_ARMAZEM NUMBER;
+    NOVO_ID_VIAGEM NUMBER;
+    NOVO_ID_ROTA NUMBER;
+    ULTIMA_LAT NUMBER;
+    ULTIMA_LON NUMBER;
+    DISTANCIA NUMBER;
+    DISTANCIA_TOTAL NUMBER;
+    CONTADOR_ORDEM NUMBER:=1;
+    ID_VEICULO_VIAGEM NUMBER;
+
+    QUANT_RESTANTE NUMBER := QUANTIDADE;
+    QTD_REPOR NUMBER;
+    NOVO_ID_VISITA NUMBER;
+    NOVO_ID_REAB NUMBER;
+
+
+BEGIN
+
+    --VALIDAR SE ARMAZEM EXISTE
+    SELECT COUNT (*) INTO ARM_EXISTE
+    FROM ARMAZEM
+    WHERE ID_ARMAZEM=COD_ARMAZEM;
+
+    IF ARM_EXISTE=0 THEN
+        RAISE_APPLICATION_ERROR(-20802, 'ARMAZEM NAO EXISTE');
+    END IF;
+
+    --VALIDAR SE PRODUTO EXISTE
+    SELECT COUNT (*) INTO PROD_EXISTE
+    FROM PRODUTO
+    WHERE ID_PRODUTO=COD_PRODUTO;
+
+    IF PROD_EXISTE=0 THEN
+        RAISE_APPLICATION_ERROR(-20806, 'PRODUTO NAO EXISTE');
+    END IF;
+
+    --VERIFICAR SE EXISTEM MÁQUINAS A PRECISAR DE REPOR ESSE PRODUTO
+    SELECT COUNT(*) INTO MAQ_PRECISA_STOCK_EXISTE
+    FROM COMPARTIMENTO
+    WHERE ID_PRODUTO=COD_PRODUTO
+    AND QTD_ATUAL<QTD_MAX;
+
+    IF MAQ_PRECISA_STOCK_EXISTE = 0 THEN
+        RAISE_APPLICATION_ERROR(-20813, 'NENHUMA MÁQUINA PRECISA DO PRODUTO');
+    END IF;
+
+    --OBTER LOC DO ARMAZEM
+    SELECT LATITUDE, LONGITUDE INTO LAT_ARMAZEM, LON_ARMAZEM
+    FROM ARMAZEM
+    WHERE ID_ARMAZEM=COD_ARMAZEM;
+
+    ULTIMA_LAT := LAT_ARMAZEM;
+    ULTIMA_LON := LON_ARMAZEM;
+
+    --GERAR NOVOS IDS
+    SELECT MAX(ID_VIAGEM) + 1 INTO NOVO_ID_VIAGEM FROM VIAGEM;
+    SELECT MAX(ID_ROTA) + 1 INTO NOVO_ID_ROTA FROM ROTA;
+
+    --CALCULAR DISNTANCIA DA VIAGEM E CONSTRUIR ROTA E ATUALIZAR QUANTIDADES DO COMPARTIMENTO
+    FOR COMPARTIMENTO IN C_COMPARTIMENTOS LOOP
+        EXIT WHEN QUANT_RESTANTE <=0;
+
+        DISTANCIA := DISTANCIA_LINEAR(ULTIMA_LAT, ULTIMA_LON, COMPARTIMENTO.LATITUDE, COMPARTIMENTO.LONGITUDE);
+        DISTANCIA_TOTAL := DISTANCIA_TOTAL + DISTANCIA;
+
+        -- INSERIR ROTA_MAQUINA
+        INSERT INTO ROTA_MAQUINA VALUES(NOVO_ID_ROTA,COMPARTIMENTO.ID_MAQUINA,CONTADOR_ORDEM);
+        CONTADOR_ORDEM:=CONTADOR_ORDEM+1;
+
+        --CALCULAR QUANTO REABASTECER
+        QTD_REPOR := COMPARTIMENTO.QTD_MAX - COMPARTIMENTO.QTD_ATUAL;
+        IF QTD_REPOR > QUANT_RESTANTE THEN
+            QTD_REPOR:=QUANT_RESTANTE;
+        END IF;
+        --ATUALIZAR O COMPARTIMENTO
+        UPDATE COMPARTIMENTO
+        SET QTD_ATUAL = QTD_ATUAL + QTD_REPOR
+        WHERE ID_COMP = COMPARTIMENTO.ID_COMP;
+
+        --NOVOS IDS
+        SELECT MAX(ID_VISITA) + 1 INTO NOVO_ID_VISITA FROM VISITA_MAQUINA;
+        SELECT MAX(ID_REAB) + 1 INTO NOVO_ID_REAB FROM REABASTECIMENTO;
+        --CRIAR VISITA_MAQUINA E REABASTECIMENTO
+        INSERT INTO VISITA_MAQUINA VALUES (NOVO_ID_VISITA, SYSDATE, DISTANCIA,'SEM OBSERVAÇOES' ,COMPARTIMENTO.ID_MAQUINA, NOVO_ID_VIAGEM);
+        INSERT INTO REABASTECIMENTO VALUES (NOVO_ID_REAB, SYSDATE, QTD_REPOR, NOVO_ID_VISITA, COMPARTIMENTO.ID_COMP, NOVO_ID_VIAGEM);
+        --ATUALIZAR QUANTIDADE RESTANTE
+        QUANT_RESTANTE := QUANT_RESTANTE - QTD_REPOR;
+        --ATUALIZAR COORDENADAS
+        ULTIMA_LAT:=COMPARTIMENTO.LATITUDE;
+        ULTIMA_LON:=COMPARTIMENTO.LONGITUDE;
+    END LOOP;
+    --VOLTAR DA MÁQUINA AO ARMAZEM
+    DISTANCIA_TOTAL := DISTANCIA_TOTAL + DISTANCIA_LINEAR(ULTIMA_LAT, ULTIMA_LON, LAT_ARMAZEM, LON_ARMAZEM);
+
+    --ESCOLHER UM VEICULO COM AUTONOMIA SUFICIENTE E DISPONIVEL
+    SELECT ID_VEICULO INTO ID_VEICULO_VIAGEM
+    FROM VEICULO
+    WHERE DISPONIVEL = 'SIM'
+    AND ID_ARMAZEM = COD_ARMAZEM
+    AND AUTONOMIA_KM > DISTANCIA_TOTAL
+    AND ROWNUM = 1;
+
+    UPDATE VEICULO
+    SET DISPONIVEL='NAO'
+    WHERE ID_VEICULO=ID_VEICULO_VIAGEM;
+
+
+    --INSERIR A ROTA
+    INSERT INTO ROTA VALUES (NOVO_ID_ROTA,'ROTA ' || NOVO_ID_ROTA, COD_ARMAZEM, COD_ARMAZEM);
+    --ASSOCIAR A ROTA À VIAGEM
+    INSERT INTO ROTA_VIAG VALUES (NOVO_ID_ROTA, NOVO_ID_VIAGEM);
+    --INSERIR A VIAGEM
+    INSERT INTO VIAGEM VALUES (NOVO_ID_VIAGEM, SYSDATE, SYSDATE+3/24,DISTANCIA_TOTAL, COD_ARMAZEM, ID_VEICULO_VIAGEM);
+    --INSERIR PRODUTO_VIAGEM
+    INSERT INTO PRODUTO_VIAGEM VALUES (NOVO_ID_VIAGEM, COD_PRODUTO, QUANTIDADE, QUANT_RESTANTE);   
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure CRIA_VIAGEM_ABAST
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."CRIA_VIAGEM_ABAST" (
+    cod_armazem IN NUMBER,
+    raio        IN NUMBER
+) IS
+    -- Coordenadas do armazém
+    v_lat_armazem  armazem.latitude%TYPE;
+    v_long_armazem armazem.longitude%TYPE;
+
+    -- Variáveis auxiliares para o cursor
+    v_id_maquina     maquina.id_maquina%TYPE;
+    v_total_stock    NUMBER;
+    v_distancia      NUMBER;
+
+    -- Tipo e variável para armazenar sequência de máquinas
+    TYPE t_seq_maquinas IS TABLE OF maquina.id_maquina%TYPE INDEX BY PLS_INTEGER;
+    v_seq_maquinas t_seq_maquinas;
+    v_count NUMBER := 0;
+
+    -- Cursor para buscar as máquinas com menor stock num raio
+    CURSOR c_maquinas_ruptura IS
+        SELECT m.id_maquina,
+               SUM(c.qtd_atual) AS total_stock,
+               distancia_linear(v_lat_armazem, v_long_armazem, m.latitude, m.longitude) AS dist
+        FROM maquina m
+        JOIN compartimento c ON m.id_maquina = c.id_maquina
+        WHERE distancia_linear(v_lat_armazem, v_long_armazem, m.latitude, m.longitude) <= raio
+        GROUP BY m.id_maquina, m.latitude, m.longitude
+        ORDER BY total_stock ASC;
+
+BEGIN
+    -- Obter coordenadas do armazém
+    SELECT latitude, longitude
+    INTO v_lat_armazem, v_long_armazem
+    FROM armazem
+    WHERE id_armazem = cod_armazem;
+
+    -- Abrir cursor e processar os 10 primeiros
+    OPEN c_maquinas_ruptura;
+    LOOP
+        FETCH c_maquinas_ruptura INTO v_id_maquina, v_total_stock, v_distancia;
+        EXIT WHEN c_maquinas_ruptura%NOTFOUND OR v_count >= 10;
+
+        v_count := v_count + 1;
+        v_seq_maquinas(v_count) := v_id_maquina;
+    END LOOP;
+    CLOSE c_maquinas_ruptura;
+
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20811, 'Nenhuma máquina com rutura de stock dentro do raio.');
+    END IF;
+
+    -- Exemplo: imprimir as máquinas a abastecer
+    FOR i IN 1..v_count LOOP
+        DBMS_OUTPUT.PUT_LINE('Máquina a abastecer: ' || v_seq_maquinas(i));
+    END LOOP;
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20806, 'Armazém não encontrado ou sem coordenadas.');
+    WHEN OTHERS THEN
+        RAISE;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure ENCOMENDA_PRODUTOS
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."ENCOMENDA_PRODUTOS" (
+    cod_armazem IN NUMBER,
+    datainicio  IN DATE
+) IS
+    v_existe_armazem NUMBER;
+    v_produto_id     NUMBER;
+    v_vendas         NUMBER;
+    v_stock_armazem  NUMBER;
+    v_stock_maquinas NUMBER;
+    v_qtd_encomendar NUMBER;
+    v_novo_id        NUMBER;
+BEGIN
+    -- Verifica se o armazém existe
+    SELECT COUNT(*) INTO v_existe_armazem
+    FROM armazem
+    WHERE id_armazem = cod_armazem;
+
+    IF v_existe_armazem = 0 THEN
+        RAISE_APPLICATION_ERROR(-20806, 'Código de armazém inexistente');
+    END IF;
+
+    -- Verifica se a data é válida
+    IF datainicio > SYSDATE THEN
+        RAISE_APPLICATION_ERROR(-20812, 'Data inválida. Deve ser anterior à data atual.');
+    END IF;
+
+    -- Para cada produto (usando o id_produto) com stock nesse armazém
+    FOR produto_rec IN (
+        SELECT DISTINCT id_produto 
+        FROM stock_armazem
+        WHERE id_armazem = cod_armazem
+    ) LOOP
+        v_produto_id := produto_rec.id_produto;
+
+        -- Quantidade vendida desde a data indicada
+        SELECT NVL(SUM(v.quantidade), 0) INTO v_vendas FROM venda v
+        JOIN compartimento c ON v.id_comp = c.id_comp
+        WHERE c.id_produto = v_produto_id AND v.data_hora >= datainicio;
+
+        -- Stock disponível no armazém
+        SELECT NVL(SUM(sa.quantidade_disponivel), 0) INTO v_stock_armazem FROM stock_armazem sa
+        WHERE sa.id_produto = v_produto_id AND sa.id_armazem = cod_armazem;
+
+        -- Stock atual em máquinas
+        SELECT NVL(SUM(c.qtd_atual), 0) INTO v_stock_maquinas FROM compartimento c
+        WHERE c.id_produto = v_produto_id;
+
+        -- Quantidade a encomendar
+        v_qtd_encomendar := v_vendas - v_stock_armazem - v_stock_maquinas;
+
+        IF v_qtd_encomendar > 0 THEN
+            -- Para "gerar" um novo ID para o registo na tabela encomenda
+            SELECT NVL(MAX(id_encomenda), 0) + 1 INTO v_novo_id FROM encomenda;
+
+            -- Inserir na encomenda
+            INSERT INTO encomenda (id_encomenda, quantidade, data_encomenda, id_produto)
+            VALUES (v_novo_id, v_qtd_encomendar, SYSDATE, v_produto_id);
+
+            -- Inserir na tabela encomenda_armazem para fazer a ligação da encomenda com o armazem
+            INSERT INTO encomenda_armazem (id_encomenda, id_armazem)
+            VALUES (v_novo_id,cod_armazem);
+        END IF;
+    END LOOP;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure PROC_2021129697
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."PROC_2021129697" (P_ID_PRODUTO IN NUMBER,P_QUANTIDADE IN NUMBER,P_ID_ARMAZEM IN NUMBER)
+IS 
+    NEW_ID_ENCOMENDA NUMBER;
+    EXISTE_PRODUTO NUMBER;
+BEGIN
+    -- VERIFICAR SE O PRODUTO EXISTE NA TABELA PRODUTO
+    SELECT COUNT(*) INTO EXISTE_PRODUTO
+    FROM PRODUTO
+    WHERE ID_PRODUTO = P_ID_PRODUTO;
+
+    IF EXISTE_PRODUTO = 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'PRODUTO NAO EXISTE');
+    END IF;
+
+    -- OBTER NOVO ID PARA A ENCOMENDA 
+    SELECT MAX(ID_ENCOMENDA) + 1 INTO NEW_ID_ENCOMENDA FROM ENCOMENDA;
+
+    -- INSERIR NA TABELA ENCOMENDA
+    INSERT INTO ENCOMENDA VALUES (NEW_ID_ENCOMENDA, P_QUANTIDADE, SYSDATE, P_ID_PRODUTO);
+
+    -- ASSOCIAR A ENCOMENDA AO ARMAZEM NA TABELA ENCOMENDA_ARMAZEM
+    INSERT INTO ENCOMENDA_ARMAZEM VALUES (NEW_ID_ENCOMENDA, P_ID_ARMAZEM);
+
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure Q_PROC_2021130905
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."Q_PROC_2021130905" (
+    p_id_maquina IN NUMBER,
+    p_data       IN DATE,
+    p_minimo     IN NUMBER
+) IS
+    v_existe           NUMBER;
+    v_total_vendas     NUMBER := 0;
+    v_id_estado_inop   NUMBER;
+BEGIN
+    -- Verifica se a máquina existe
+    SELECT COUNT(*) INTO v_existe
+    FROM maquina
+    WHERE id_maquina = p_id_maquina;
+
+    IF v_existe = 0 THEN
+        RAISE_APPLICATION_ERROR(-20911, 'Máquina inexistente');
+    END IF;
+
+    -- Conta as vendas no dia indicado
+    SELECT COUNT(*) INTO v_total_vendas
+    FROM venda
+    WHERE id_maquina = p_id_maquina
+      AND TRUNC(data_hora) = TRUNC(p_data);
+
+    -- Verifica o total de vendas
+    IF v_total_vendas < p_minimo THEN
+        -- Obtem o ID do estado 'inoperacional'
+        SELECT id_estado INTO v_id_estado_inop
+        FROM estado_maquina
+        WHERE UPPER(estado) = 'INOPERACIONAL';
+
+        -- Atualiza o estado atual da máquina
+        UPDATE maquina
+        SET id_estado = v_id_estado_inop
+        WHERE id_maquina = p_id_maquina;
+
+        -- 3c. Inserir histórico na tabela maquina_estado
+        INSERT INTO maquina_estado (
+            id_maquina,
+            id_estado,
+            data_hora
+        ) VALUES (
+            p_id_maquina,
+            v_id_estado_inop,
+            SYSDATE
+        );
+    END IF;
+END;
+
+/
+--------------------------------------------------------
+--  DDL for Procedure Q_PROC_2022161633
+--------------------------------------------------------
+set define off;
+
+  CREATE OR REPLACE PROCEDURE "AABDG07"."Q_PROC_2022161633" (
+    p_id_maquina     IN NUMBER,
+    p_id_funcionario IN NUMBER,
+    p_id_carro       IN NUMBER
+) IS
+    v_id_manutencao manutencao.id_manutencao%TYPE;
+BEGIN
+
+
+
+    UPDATE compartimento
+    SET qtd_atual = qtd_max
+    WHERE id_maquina = p_id_maquina;
+
+    UPDATE maquina
+    SET estado = 'OK'
+    WHERE id_maquina = p_id_maquina;
+
+    SELECT manutencao_seq.NEXTVAL INTO v_id_manutencao FROM dual;
+
+    INSERT INTO manutencao (
+        id_manutencao,
+        data_hora,
+        estado,
+        id_maquina
+    )
+    VALUES (
+        v_id_manutencao,
+        SYSDATE,
+        1,
+        p_id_maquina,
+    );
+
+    INSERT INTO manut_func (
+        id_funcionario,
+        id_manutencao
+    )
+    VALUES (
+        p_id_funcionario,
+        v_id_manutencao
+    );
+END;
+
+/

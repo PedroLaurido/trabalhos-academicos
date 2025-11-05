@@ -1,0 +1,280 @@
+CREATE OR REPLACE FUNCTION data_ultimo_abastec(
+    idmaquina  IN NUMBER,
+    idproduto  IN NUMBER
+) RETURN DATE IS
+    v_data DATE;
+    v_count INTEGER;
+BEGIN
+    SELECT COUNT(*) INTO v_count
+    FROM maquinas
+    WHERE codigo = idmaquina;
+
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20801, 'Máquina não existe.');
+    END IF;
+
+    SELECT MAX(reabastecimento,data_hora) INTO v_data
+    FROM reabastecimento
+    JOIN compartimento ON compartimento.id_comp = reabastecimentos.id_comp
+    WHERE compartimento.id_maquina = idmaquina
+      AND reabastecimentos.id_produto = idproduto
+    
+    IF v_data IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Produto nunca abastecido nessa máquina.');
+    END IF;
+
+    RETURN v_data;
+END data_ultimo_abastec;
+/
+
+CREATE OR REPLACE FUNCTION maquina_mais_proxima (
+    idproduto IN NUMBER,
+    lat       IN NUMBER,
+    long      IN NUMBER
+) RETURN NUMBER IS
+    -- Variáveis para resultado
+    v_melhor_maquina   maquina.id_maquina%TYPE := NULL;
+    v_menor_distancia  NUMBER := NULL;
+    v_distancia_atual  NUMBER;
+BEGIN
+    -- Loop sobre todas as máquinas com o produto em algum compartimento
+    FOR rec IN (
+        SELECT DISTINCT m.id_maquina, m.latitude, m.longitude
+        FROM maquina m
+        JOIN compartimento c ON m.id_maquina = c.id_maquina
+        WHERE c.id_produto = idproduto
+          AND c.qtd_atual > 0
+    ) LOOP
+        -- Calcular distância usando a função existente
+        v_distancia_atual := distancia_liniar(lat, long, rec.latitude, rec.longitude);
+
+        -- Verificar se é a menor distância até agora
+        IF v_menor_distancia IS NULL OR v_distancia_atual < v_menor_distancia THEN
+            v_menor_distancia := v_distancia_atual;
+            v_melhor_maquina := rec.id_maquina;
+        END IF;
+    END LOOP;
+
+    -- Se nenhuma máquina for encontrada, lançar erro
+    IF v_melhor_maquina IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20802, 'Nenhuma máquina com o produto disponível.');
+    END IF;
+
+    RETURN v_melhor_maquina;
+END maquina_mais_proxima;
+/
+
+
+CREATE OR REPLACE TRIGGER update_stock
+AFTER INSERT ON venda
+FOR EACH ROW
+DECLARE
+    v_qtd_atual      compartimento.qtd_atual%TYPE;
+    v_total_estoque  NUMBER;
+    v_id_produto     compartimento.id_produto%TYPE;
+BEGIN
+    UPDATE compartimento
+    SET qtd_atual = qtd_atual - :NEW.quantidade
+    WHERE id_maquina = :NEW.id_maquina
+      AND id_comp = :NEW.id_comp;
+
+    SELECT qtd_atual INTO v_qtd_atual
+    FROM compartimento
+    WHERE id_maquina = :NEW.id_maquina
+      AND id_comp = :NEW.id_comp;
+
+    IF v_qtd_atual < 0 THEN
+        RAISE_APPLICATION_ERROR(-20001, 'Quantidade de produto insuficiente no compartimento.');
+        UPDATE compartimento
+        SET estado = 'SEM STOCK'
+        WHERE id_maquina = :NEW.id_maquina
+          AND id_comp = :NEW.id_comp;
+    END IF;
+
+    SELECT id_produto INTO v_id_produto
+    FROM compartimento
+    WHERE id_comp = :NEW.id_comp;
+
+    SELECT SUM(qtd_atual) INTO v_total_estoque
+    FROM compartimento
+    WHERE id_maquina = :NEW.id_maquina
+      AND id_produto = v_id_produto;
+
+    IF v_total_estoque IS NULL THEN
+        v_total_estoque := 0;
+    END IF;
+
+    IF v_total_estoque <= 0 THEN
+        UPDATE maquina
+        SET estado = 'SEM STOCK'
+        WHERE id_maquina = :NEW.id_maquina;
+    END IF;
+END;
+/
+CREATE OR REPLACE PROCEDURE Q_PROC_2022161633 (
+    p_id_maquina     IN NUMBER,
+    p_id_funcionario IN NUMBER,
+    p_id_carro       IN NUMBER
+) IS
+    v_id_manutencao manutencao.id_manutencao%TYPE;
+BEGIN
+
+
+
+    UPDATE compartimento
+    SET qtd_atual = qtd_max
+    WHERE id_maquina = p_id_maquina;
+
+    UPDATE maquina
+    SET estado = 'OK'
+    WHERE id_maquina = p_id_maquina;
+
+    SELECT manutencao_seq.NEXTVAL INTO v_id_manutencao FROM dual;
+
+    INSERT INTO manutencao (
+        id_manutencao,
+        data_hora,
+        estado,
+        id_maquina
+    )
+    VALUES (
+        v_id_manutencao,
+        SYSDATE,
+        1,
+        p_id_maquina,
+    );
+
+    INSERT INTO manut_func (
+        id_funcionario,
+        id_manutencao
+    )
+    VALUES (
+        p_id_funcionario,
+        v_id_manutencao
+    );
+
+    COMMIT;
+END on_restock_machines;
+/
+
+
+CREATE OR REPLACE PROCEDURE log_out_of_stock_items_in_vehicle (
+    p_id_veiculo IN NUMBER
+) IS
+    v_id_viagem viagem.id_viagem%TYPE;
+BEGIN
+    -- 1. Get the most recent trip for the vehicle
+    SELECT id_viagem
+    INTO v_id_viagem
+    FROM (
+        SELECT id_viagem
+        FROM viagem
+        WHERE id_veiculo = p_id_veiculo
+        ORDER BY data_inicio DESC
+    )
+    WHERE ROWNUM = 1;
+
+    -- 2. Loop through products in this trip that are out of stock
+    FOR prod IN (
+        SELECT pv.id_produto
+        FROM produto_viagem pv
+        WHERE pv.id_viagem = v_id_viagem
+          AND (pv.qtd_atual = 0 OR pv.qtd_atual IS NULL)
+    ) LOOP
+        -- 3. Insert a log record for each missing product
+        INSERT INTO log_sem_stock (
+            id_log,
+            id_viagem,
+            id_produto,
+            data_alarme
+        ) VALUES (
+            log_sem_stock_seq.NEXTVAL,
+            v_id_viagem,
+            prod.id_produto,
+            SYSDATE
+        );
+    END LOOP;
+
+    COMMIT;
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        -- No trip found for vehicle - optionally do nothing
+        NULL;
+    WHEN OTHERS THEN
+        ROLLBACK;
+        RAISE;
+END log_out_of_stock_items_in_vehicle;
+/
+
+CREATE OR REPLACE PROCEDURE cria_viagem_abast (
+    cod_armazem IN NUMBER,
+    raio       IN NUMBER
+) IS
+    -- Variáveis para armazenar coordenadas do armazém
+    v_lat_armazem  armazem.latitude%TYPE;
+    v_long_armazem armazem.longitude%TYPE;
+
+    -- Cursor para buscar as 10 máquinas dentro do raio com menor stock
+    CURSOR c_maquinas_ruptura IS
+        SELECT m.codigo,
+               SUM(e.qtd_atual) AS total_stock,
+               distancia_linear(v_lat_armazem, v_long_armazem, m.latitude, m.longitude) AS dist
+          FROM maquina m
+          JOIN compartimento e ON m.codigo = e.id_maquina
+         WHERE distancia_linear(v_lat_armazem, v_long_armazem, m.latitude, m.longitude) <= raio
+         GROUP BY m.codigo
+         ORDER BY total_stock ASC -- menor stock primeiro (maior rutura)
+         FETCH FIRST 10 ROWS ONLY;
+
+    -- Tipo para armazenar sequência de máquinas
+    TYPE t_seq_maquinas IS TABLE OF maquina.codigo%TYPE INDEX BY PLS_INTEGER;
+    v_seq_maquinas t_seq_maquinas;
+
+    v_count NUMBER := 0;
+BEGIN
+    -- Obter coordenadas do armazém
+    SELECT latitude, longitude
+      INTO v_lat_armazem, v_long_armazem
+      FROM armazem
+     WHERE codigo = cod_armazem;
+
+    IF v_lat_armazem IS NULL OR v_long_armazem IS NULL THEN
+        RAISE_APPLICATION_ERROR(-20806, 'Armazém não encontrado ou sem coordenadas.');
+    END IF;
+
+    -- Abrir cursor para selecionar máquinas com rutura de stock
+    OPEN c_maquinas_ruptura;
+    LOOP
+        FETCH c_maquinas_ruptura INTO v_seq_maquinas(v_count + 1), -- código da máquina
+                                    -- ignorando total_stock e dist para simplicidade
+                                    -- se quiser pode armazenar num outro array
+                                    NULL,
+                                    NULL;
+        EXIT WHEN c_maquinas_ruptura%NOTFOUND OR v_count >= 10;
+        v_count := v_count + 1;
+    END LOOP;
+    CLOSE c_maquinas_ruptura;
+
+    IF v_count = 0 THEN
+        RAISE_APPLICATION_ERROR(-20811, 'Nenhuma máquina com rutura de stock dentro do raio.');
+    END IF;
+
+    -- Aqui você teria a sequência de máquinas a abastecer na v_seq_maquinas
+    -- O planejamento da viagem (roteirização) pode ser feita aqui ou em outra lógica
+    -- Por exemplo, apenas retornar a lista ordenada pela rutura (já ordenada no cursor)
+
+    -- Exemplo: apenas printar (ou armazenar numa tabela de viagens)
+    FOR i IN 1..v_count LOOP
+        DBMS_OUTPUT.PUT_LINE('Máquina a abastecer: ' || v_seq_maquinas(i));
+    END LOOP;
+
+    -- Você pode criar a viagem e inserir registros na tabela viagem, viagem_maquina, etc.
+    -- Lógica de inserção aqui, conforme estrutura da sua base
+
+EXCEPTION
+    WHEN NO_DATA_FOUND THEN
+        RAISE_APPLICATION_ERROR(-20806, 'Armazém não encontrado.');
+    WHEN OTHERS THEN
+        RAISE;
+END cria_viagem_abast;
+/
