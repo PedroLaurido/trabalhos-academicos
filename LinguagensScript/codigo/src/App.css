@@ -1,0 +1,273 @@
+.tabela-principal {
+  width: 550px;
+  margin: 0 auto;
+  border: 2px solid white;
+}
+
+.tabela-principal_encerrado {
+  width: 550px;
+  margin: 0 auto;
+  border: 2px solid white;
+  background-color: rgb(27, 25, 25);
+  cursor: not-allowed;
+}
+
+.tabela-principal_completa {
+  width: 550px;
+  margin: 0 auto;
+  border: 2px solid white;
+  background-color: rgb(255, 204, 0);
+  cursor: not-allowed;
+}
+
+.tabuleiro-pequeno {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid #000;
+}
+
+.tabuleiro-pequeno td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.tabuleiro-pequeno td:hover {
+  background-color: #c7b3b3;
+}
+
+.jogo_enc_tabuleiro-pequeno {
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 700;
+  border: 2px solid #000;
+}
+
+.jogo_enc_tabuleiro-pequeno td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.nome {
+  font-style: italic;
+  font-weight: bold;
+  font-size: 30px;
+  font-family: arial, sans-serif;
+  text-align: center;
+}
+
+.tabuleiro-pequeno-empate {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: #ffe680;
+  cursor: not-allowed;
+}
+
+.tabuleiro-pequeno-empate td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+.tabuleiro-pequeno-vencedor-x {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: #ff2e63;
+  cursor: not-allowed;
+}
+.tabuleiro-pequeno-vencedor-x td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+.tabuleiro-pequeno-vencedor-o {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: blue;
+  cursor: not-allowed;
+}
+.tabuleiro-pequeno-vencedor-o td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.jogo_enc_tabuleiro-pequeno-vencedor-x {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: #ff2e63;
+  cursor: not-allowed;
+}
+
+.jogo_enc_tabuleiro-pequeno-vencedor-x td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+.jogo_enc_tabuleiro-pequeno-vencedor-o {
+  border-collapse: collapse;
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  border: 5px solid rgb(0, 0, 0);
+  background-color: blue;
+  cursor: not-allowed;
+}
+
+.jogo_enc_tabuleiro-pequeno-vencedor-o td {
+  border: 2px solid #000;
+  text-align: center;
+  vertical-align: middle;
+  font-size: 3rem;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 24px;
+  width: 50px;
+  height: 50px;
+}
+
+#play-again {
+  background-color: #ff2e63;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#play-again:hover {
+  padding: 10px 40px;
+  background-color: #08d9d6;
+  color: #000;
+}
+
+#voltar {
+  background-color: #ff2e63;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+}
+
+#voltar:hover {
+  padding: 10px 40px;
+  background-color: #08d9d6;
+  color: #000;
+}
+
+#jogadorvsjogador {
+  background-color: #ff2e63;
+  color: white;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+#jogadorvsjogador:hover {
+  padding: 10px 40px;
+  background-color: #08d9d6;
+  color: #000;
+}
+
+#btn_creditos {
+  color: white;
+  background-color: #ff2e63;
+  padding: 10px 25px;
+  border: none;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+}
+
+#btn_creditos:hover {
+  padding: 10px 40px;
+  background-color: #08d9d6;
+  color: #000;
+}
+
+#inputs {
+  width: 20%;
+  height: 20%;
+  background-color: #ff2e63;
+  padding: 1vh 1vw;
+  color: white;
+  margin: 5px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+
+#jogador1,
+#jogador2 {
+  font-size: 0.9rem;
+  margin-right: 10px;
+  border: 2px solid;
+  border-radius: 10px;
+}
+
+#jogador1,
+#jogador2::placeholder {
+  text-align: center;
+}
