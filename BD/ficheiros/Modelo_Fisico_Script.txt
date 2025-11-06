@@ -1,0 +1,635 @@
+/*==============================================================*/
+/* DBMS name:      ORACLE Version 11g                           */
+/* Created on:     05/12/2022 23:37:56                          */
+/*==============================================================*/
+
+
+alter table COR
+   drop constraint FK_COR_COMPOSTO_ROUPA;
+
+alter table DEVOLUCAO
+   drop constraint FK_DEVOLUCA_OPERA_FUNCIONA;
+
+alter table EFETUA
+   drop constraint FK_EFETUA_EFETUA_VENDA;
+
+alter table EFETUA
+   drop constraint FK_EFETUA_EFETUA2_DEVOLUCA;
+
+alter table ENCOMENDA
+   drop constraint FK_ENCOMEND_EFETIVAM_TRABALHA;
+
+alter table ESTAGIARIO
+   drop constraint FK_ESTAGIAR_HERANCA2_TRABALHA;
+
+alter table ESTAGIARIO
+   drop constraint FK_ESTAGIAR_SUPERVISI_FUNCIONA;
+
+alter table FAZ
+   drop constraint FK_FAZ_FAZ_VENDA;
+
+alter table FAZ
+   drop constraint FK_FAZ_FAZ2_ENCOMEND;
+
+alter table FORNECE
+   drop constraint FK_FORNECE_FORNECE_FORNECED;
+
+alter table FORNECE
+   drop constraint FK_FORNECE_FORNECE2_ROUPA;
+
+alter table FUNCIONARIO
+   drop constraint FK_FUNCIONA_HERANCA_TRABALHA;
+
+alter table LINHA_DEVOLUCAO
+   drop constraint FK_LINHA_DE_CONCRETIZ_DEVOLUCA;
+
+alter table LINHA_ENCOMENDA
+   drop constraint FK_LINHA_EN_REALIZA_ENCOMEND;
+
+alter table LINHA_ENCOMENDA
+   drop constraint FK_LINHA_EN_REFERENTE_ROUPA;
+
+alter table LINHA_VENDA
+   drop constraint FK_LINHA_VE_EXECUTA_ROUPA;
+
+alter table LINHA_VENDA
+   drop constraint FK_LINHA_VE_PERTENCE_VENDA;
+
+alter table MATERIAL
+   drop constraint FK_MATERIAL_CONSTITUI_ROUPA;
+
+alter table ROUPA
+   drop constraint FK_ROUPA_POSSUI_LOJA;
+
+alter table ROUPA
+   drop constraint FK_ROUPA_RESPEITAN_LINHA_DE;
+
+alter table ROUPA
+   drop constraint FK_ROUPA_TEM_COLECAO;
+
+alter table TRABALHADORES
+   drop constraint FK_TRABALHA_CONTEM_LOJA;
+
+alter table VENDA
+   drop constraint FK_VENDA_COMPRA_CLIENTE;
+
+alter table VENDA
+   drop constraint FK_VENDA_REALIZAM_TRABALHA;
+
+drop table CLIENTE cascade constraints;
+
+drop table COLECAO cascade constraints;
+
+drop index COMPOSTO_FK;
+
+drop table COR cascade constraints;
+
+drop index OPERA_FK;
+
+drop table DEVOLUCAO cascade constraints;
+
+drop index EFETUA2_FK;
+
+drop index EFETUA_FK;
+
+drop table EFETUA cascade constraints;
+
+drop index EFETIVAM_FK;
+
+drop table ENCOMENDA cascade constraints;
+
+drop index SUPERVISIONA_FK;
+
+drop table ESTAGIARIO cascade constraints;
+
+drop index FAZ2_FK;
+
+drop index FAZ_FK;
+
+drop table FAZ cascade constraints;
+
+drop index FORNECE2_FK;
+
+drop index FORNECE_FK;
+
+drop table FORNECE cascade constraints;
+
+drop table FORNECEDOR cascade constraints;
+
+drop table FUNCIONARIO cascade constraints;
+
+drop index CONCRETIZA_FK;
+
+drop table LINHA_DEVOLUCAO cascade constraints;
+
+drop index REFERENTE_FK;
+
+drop index REALIZA_FK;
+
+drop table LINHA_ENCOMENDA cascade constraints;
+
+drop index PERTENCE_FK;
+
+drop index EXECUTA_FK;
+
+drop table LINHA_VENDA cascade constraints;
+
+drop table LOJA cascade constraints;
+
+drop index CONSTITUIDO_POR_FK;
+
+drop table MATERIAL cascade constraints;
+
+drop index RESPEITANTE_FK;
+
+drop index POSSUI_FK;
+
+drop index TEM_FK;
+
+drop table ROUPA cascade constraints;
+
+drop index CONTEM_FK;
+
+drop table TRABALHADORES cascade constraints;
+
+drop index REALIZAM_FK;
+
+drop index COMPRA_FK;
+
+drop table VENDA cascade constraints;
+
+/*==============================================================*/
+/* Table: CLIENTE                                               */
+/*==============================================================*/
+create table CLIENTE 
+(
+   ID_CLIENTE           NUMBER(4)            not null,
+   NOME                 VARCHAR2(30)         not null,
+   MEMBRO               SMALLINT,
+   MORADA               VARCHAR2(100)        not null,
+   NIF                  NUMBER(9)            not null,
+   constraint PK_CLIENTE primary key (ID_CLIENTE)
+);
+
+/*==============================================================*/
+/* Table: COLECAO                                               */
+/*==============================================================*/
+create table COLECAO 
+(
+   ID_COLECAO           NUMBER(4)            not null,
+   NOME                 VARCHAR2(30),
+   constraint PK_COLECAO primary key (ID_COLECAO)
+);
+
+/*==============================================================*/
+/* Table: COR                                                   */
+/*==============================================================*/
+create table COR 
+(
+   ID_COR               NUMBER(4)            not null,
+   ID_ROUPA             NUMBER(4)            not null,
+   NOME                 VARCHAR2(30),
+   constraint PK_COR primary key (ID_COR)
+);
+
+/*==============================================================*/
+/* Index: COMPOSTO_FK                                           */
+/*==============================================================*/
+create index COMPOSTO_FK on COR (
+   ID_ROUPA ASC
+);
+
+/*==============================================================*/
+/* Table: DEVOLUCAO                                             */
+/*==============================================================*/
+create table DEVOLUCAO 
+(
+   ID_DEV               NUMBER(4)            not null,
+   ID_FUNC              NUMBER(4),
+   DATA                 DATE                 not null,
+   constraint PK_DEVOLUCAO primary key (ID_DEV)
+);
+
+/*==============================================================*/
+/* Index: OPERA_FK                                              */
+/*==============================================================*/
+create index OPERA_FK on DEVOLUCAO (
+   ID_FUNC ASC
+);
+
+/*==============================================================*/
+/* Table: EFETUA                                                */
+/*==============================================================*/
+create table EFETUA 
+(
+   ID_VENDA             NUMBER(4)            not null,
+   ID_DEV               NUMBER(4)            not null,
+   constraint PK_EFETUA primary key (ID_VENDA, ID_DEV)
+);
+
+/*==============================================================*/
+/* Index: EFETUA_FK                                             */
+/*==============================================================*/
+create index EFETUA_FK on EFETUA (
+   ID_VENDA ASC
+);
+
+/*==============================================================*/
+/* Index: EFETUA2_FK                                            */
+/*==============================================================*/
+create index EFETUA2_FK on EFETUA (
+   ID_DEV ASC
+);
+
+/*==============================================================*/
+/* Table: ENCOMENDA                                             */
+/*==============================================================*/
+create table ENCOMENDA 
+(
+   ID_ENCO              NUMBER(4)            not null,
+   ID_FUNC              NUMBER(4),
+   QUANTIDADE           NUMBER(3),
+   DATA_ENCOM           DATE                 not null,
+   constraint PK_ENCOMENDA primary key (ID_ENCO)
+);
+
+/*==============================================================*/
+/* Index: EFETIVAM_FK                                           */
+/*==============================================================*/
+create index EFETIVAM_FK on ENCOMENDA (
+   ID_FUNC ASC
+);
+
+/*==============================================================*/
+/* Table: ESTAGIARIO                                            */
+/*==============================================================*/
+create table ESTAGIARIO 
+(
+   ID_FUNC              NUMBER(4)            not null,
+   FUN_ID_FUNC          NUMBER(4),
+   PREMIOS              NUMBER(5)            not null,
+   constraint PK_ESTAGIARIO primary key (ID_FUNC)
+);
+
+/*==============================================================*/
+/* Index: SUPERVISIONA_FK                                       */
+/*==============================================================*/
+create index SUPERVISIONA_FK on ESTAGIARIO (
+   FUN_ID_FUNC ASC
+);
+
+/*==============================================================*/
+/* Table: FAZ                                                   */
+/*==============================================================*/
+create table FAZ 
+(
+   ID_VENDA             NUMBER(4)            not null,
+   ID_ENCO              NUMBER(4)            not null,
+   constraint PK_FAZ primary key (ID_VENDA, ID_ENCO)
+);
+
+/*==============================================================*/
+/* Index: FAZ_FK                                                */
+/*==============================================================*/
+create index FAZ_FK on FAZ (
+   ID_VENDA ASC
+);
+
+/*==============================================================*/
+/* Index: FAZ2_FK                                               */
+/*==============================================================*/
+create index FAZ2_FK on FAZ (
+   ID_ENCO ASC
+);
+
+/*==============================================================*/
+/* Table: FORNECE                                               */
+/*==============================================================*/
+create table FORNECE 
+(
+   ID_FORN              NUMBER(4)            not null,
+   ID_ROUPA             NUMBER(4)            not null,
+   constraint PK_FORNECE primary key (ID_FORN, ID_ROUPA)
+);
+
+/*==============================================================*/
+/* Index: FORNECE_FK                                            */
+/*==============================================================*/
+create index FORNECE_FK on FORNECE (
+   ID_FORN ASC
+);
+
+/*==============================================================*/
+/* Index: FORNECE2_FK                                           */
+/*==============================================================*/
+create index FORNECE2_FK on FORNECE (
+   ID_ROUPA ASC
+);
+
+/*==============================================================*/
+/* Table: FORNECEDOR                                            */
+/*==============================================================*/
+create table FORNECEDOR 
+(
+   ID_FORN              NUMBER(4)            not null,
+   NOME                 VARCHAR2(30),
+   constraint PK_FORNECEDOR primary key (ID_FORN)
+);
+
+/*==============================================================*/
+/* Table: FUNCIONARIO                                           */
+/*==============================================================*/
+create table FUNCIONARIO 
+(
+   ID_FUNC              NUMBER(4)            not null,
+   SALARIO              NUMBER(8)            not null,
+   constraint PK_FUNCIONARIO primary key (ID_FUNC)
+);
+
+/*==============================================================*/
+/* Table: LINHA_DEVOLUCAO                                       */
+/*==============================================================*/
+create table LINHA_DEVOLUCAO 
+(
+   ID_DEV               NUMBER(4)            not null,
+   CODIGO_DEVOLUCAO     NUMBER(4)            not null,
+   PRECO_UNI            NUMBER(6)            not null,
+   QUANTIDADE           NUMBER(3),
+   constraint PK_LINHA_DEVOLUCAO primary key (ID_DEV, CODIGO_DEVOLUCAO)
+);
+
+/*==============================================================*/
+/* Index: CONCRETIZA_FK                                         */
+/*==============================================================*/
+create index CONCRETIZA_FK on LINHA_DEVOLUCAO (
+   ID_DEV ASC
+);
+
+/*==============================================================*/
+/* Table: LINHA_ENCOMENDA                                       */
+/*==============================================================*/
+create table LINHA_ENCOMENDA 
+(
+   ID_ENCO              NUMBER(4)            not null,
+   CODIGO_ENCOMENDA     NUMBER(4)            not null,
+   ID_ROUPA             NUMBER(4),
+   PRECO_UNI            NUMBER(6)            not null,
+   QUANTIDADE           NUMBER(3),
+   constraint PK_LINHA_ENCOMENDA primary key (ID_ENCO, CODIGO_ENCOMENDA)
+);
+
+/*==============================================================*/
+/* Index: REALIZA_FK                                            */
+/*==============================================================*/
+create index REALIZA_FK on LINHA_ENCOMENDA (
+   ID_ENCO ASC
+);
+
+/*==============================================================*/
+/* Index: REFERENTE_FK                                          */
+/*==============================================================*/
+create index REFERENTE_FK on LINHA_ENCOMENDA (
+   ID_ROUPA ASC
+);
+
+/*==============================================================*/
+/* Table: LINHA_VENDA                                           */
+/*==============================================================*/
+create table LINHA_VENDA 
+(
+   ID_VENDA             NUMBER(4)            not null,
+   CODIGO_LINHA         NUMBER(4)            not null,
+   ID_ROUPA             NUMBER(4),
+   PRECO_UNI            NUMBER(6)            not null,
+   QUANTIDADE           NUMBER(3),
+   constraint PK_LINHA_VENDA primary key (ID_VENDA, CODIGO_LINHA)
+);
+
+/*==============================================================*/
+/* Index: EXECUTA_FK                                            */
+/*==============================================================*/
+create index EXECUTA_FK on LINHA_VENDA (
+   ID_ROUPA ASC
+);
+
+/*==============================================================*/
+/* Index: PERTENCE_FK                                           */
+/*==============================================================*/
+create index PERTENCE_FK on LINHA_VENDA (
+   ID_VENDA ASC
+);
+
+/*==============================================================*/
+/* Table: LOJA                                                  */
+/*==============================================================*/
+create table LOJA 
+(
+   ID_LOJA              NUMBER(4)            not null,
+   LOC                  VARCHAR2(20),
+   MORADA               VARCHAR2(100)        not null,
+   constraint PK_LOJA primary key (ID_LOJA)
+);
+
+/*==============================================================*/
+/* Table: MATERIAL                                              */
+/*==============================================================*/
+create table MATERIAL 
+(
+   ID_MATERIAL          NUMBER(4)            not null,
+   ID_ROUPA             NUMBER(4)            not null,
+   NOME                 VARCHAR2(30)         not null,
+   constraint PK_MATERIAL primary key (ID_MATERIAL)
+);
+
+/*==============================================================*/
+/* Index: CONSTITUIDO_POR_FK                                    */
+/*==============================================================*/
+create index CONSTITUIDO_POR_FK on MATERIAL (
+   ID_ROUPA ASC
+);
+
+/*==============================================================*/
+/* Table: ROUPA                                                 */
+/*==============================================================*/
+create table ROUPA 
+(
+   ID_ROUPA             NUMBER(4)            not null,
+   ID_COLECAO           NUMBER(4)            not null,
+   ID_DEV               NUMBER(4)            not null,
+   CODIGO_DEVOLUCAO     NUMBER(4)            not null,
+   ID_LOJA              NUMBER(4)            not null,
+   NOME                 VARCHAR2(30)         not null,
+   TAMANHO              VARCHAR2(5)          not null,
+   GENERO               VARCHAR2(3),
+   DATA_CHEGADA         DATE                 not null,
+   STOCK                NUMBER(30),
+   constraint PK_ROUPA primary key (ID_ROUPA)
+);
+
+/*==============================================================*/
+/* Index: TEM_FK                                                */
+/*==============================================================*/
+create index TEM_FK on ROUPA (
+   ID_COLECAO ASC
+);
+
+/*==============================================================*/
+/* Index: POSSUI_FK                                             */
+/*==============================================================*/
+create index POSSUI_FK on ROUPA (
+   ID_LOJA ASC
+);
+
+/*==============================================================*/
+/* Index: RESPEITANTE_FK                                        */
+/*==============================================================*/
+create index RESPEITANTE_FK on ROUPA (
+   ID_DEV ASC,
+   CODIGO_DEVOLUCAO ASC
+);
+
+/*==============================================================*/
+/* Table: TRABALHADORES                                         */
+/*==============================================================*/
+create table TRABALHADORES 
+(
+   ID_FUNC              NUMBER(4)            not null,
+   ID_LOJA              NUMBER(4)            not null,
+   NOME                 VARCHAR2(30)         not null,
+   HORAS                NUMBER(20)           not null,
+   NIB                  NUMBER(21)           not null,
+   DATA_NASCI           DATE,
+   GENERO               VARCHAR2(3),
+   MORADA               VARCHAR2(100)        not null,
+   constraint PK_TRABALHADORES primary key (ID_FUNC)
+);
+
+/*==============================================================*/
+/* Index: CONTEM_FK                                             */
+/*==============================================================*/
+create index CONTEM_FK on TRABALHADORES (
+   ID_LOJA ASC
+);
+
+/*==============================================================*/
+/* Table: VENDA                                                 */
+/*==============================================================*/
+create table VENDA 
+(
+   ID_VENDA             NUMBER(4)            not null,
+   ID_CLIENTE           NUMBER(4),
+   ID_FUNC              NUMBER(4),
+   DATA_VENDA           DATE                 not null,
+   constraint PK_VENDA primary key (ID_VENDA)
+);
+
+/*==============================================================*/
+/* Index: COMPRA_FK                                             */
+/*==============================================================*/
+create index COMPRA_FK on VENDA (
+   ID_CLIENTE ASC
+);
+
+/*==============================================================*/
+/* Index: REALIZAM_FK                                           */
+/*==============================================================*/
+create index REALIZAM_FK on VENDA (
+   ID_FUNC ASC
+);
+
+alter table COR
+   add constraint FK_COR_COMPOSTO_ROUPA foreign key (ID_ROUPA)
+      references ROUPA (ID_ROUPA);
+
+alter table DEVOLUCAO
+   add constraint FK_DEVOLUCA_OPERA_FUNCIONA foreign key (ID_FUNC)
+      references FUNCIONARIO (ID_FUNC);
+
+alter table EFETUA
+   add constraint FK_EFETUA_EFETUA_VENDA foreign key (ID_VENDA)
+      references VENDA (ID_VENDA);
+
+alter table EFETUA
+   add constraint FK_EFETUA_EFETUA2_DEVOLUCA foreign key (ID_DEV)
+      references DEVOLUCAO (ID_DEV);
+
+alter table ENCOMENDA
+   add constraint FK_ENCOMEND_EFETIVAM_TRABALHA foreign key (ID_FUNC)
+      references TRABALHADORES (ID_FUNC);
+
+alter table ESTAGIARIO
+   add constraint FK_ESTAGIAR_HERANCA2_TRABALHA foreign key (ID_FUNC)
+      references TRABALHADORES (ID_FUNC);
+
+alter table ESTAGIARIO
+   add constraint FK_ESTAGIAR_SUPERVISI_FUNCIONA foreign key (FUN_ID_FUNC)
+      references FUNCIONARIO (ID_FUNC);
+
+alter table FAZ
+   add constraint FK_FAZ_FAZ_VENDA foreign key (ID_VENDA)
+      references VENDA (ID_VENDA);
+
+alter table FAZ
+   add constraint FK_FAZ_FAZ2_ENCOMEND foreign key (ID_ENCO)
+      references ENCOMENDA (ID_ENCO);
+
+alter table FORNECE
+   add constraint FK_FORNECE_FORNECE_FORNECED foreign key (ID_FORN)
+      references FORNECEDOR (ID_FORN);
+
+alter table FORNECE
+   add constraint FK_FORNECE_FORNECE2_ROUPA foreign key (ID_ROUPA)
+      references ROUPA (ID_ROUPA);
+
+alter table FUNCIONARIO
+   add constraint FK_FUNCIONA_HERANCA_TRABALHA foreign key (ID_FUNC)
+      references TRABALHADORES (ID_FUNC);
+
+alter table LINHA_DEVOLUCAO
+   add constraint FK_LINHA_DE_CONCRETIZ_DEVOLUCA foreign key (ID_DEV)
+      references DEVOLUCAO (ID_DEV);
+
+alter table LINHA_ENCOMENDA
+   add constraint FK_LINHA_EN_REALIZA_ENCOMEND foreign key (ID_ENCO)
+      references ENCOMENDA (ID_ENCO);
+
+alter table LINHA_ENCOMENDA
+   add constraint FK_LINHA_EN_REFERENTE_ROUPA foreign key (ID_ROUPA)
+      references ROUPA (ID_ROUPA);
+
+alter table LINHA_VENDA
+   add constraint FK_LINHA_VE_EXECUTA_ROUPA foreign key (ID_ROUPA)
+      references ROUPA (ID_ROUPA);
+
+alter table LINHA_VENDA
+   add constraint FK_LINHA_VE_PERTENCE_VENDA foreign key (ID_VENDA)
+      references VENDA (ID_VENDA);
+
+alter table MATERIAL
+   add constraint FK_MATERIAL_CONSTITUI_ROUPA foreign key (ID_ROUPA)
+      references ROUPA (ID_ROUPA);
+
+alter table ROUPA
+   add constraint FK_ROUPA_POSSUI_LOJA foreign key (ID_LOJA)
+      references LOJA (ID_LOJA);
+
+alter table ROUPA
+   add constraint FK_ROUPA_RESPEITAN_LINHA_DE foreign key (ID_DEV, CODIGO_DEVOLUCAO)
+      references LINHA_DEVOLUCAO (ID_DEV, CODIGO_DEVOLUCAO);
+
+alter table ROUPA
+   add constraint FK_ROUPA_TEM_COLECAO foreign key (ID_COLECAO)
+      references COLECAO (ID_COLECAO);
+
+alter table TRABALHADORES
+   add constraint FK_TRABALHA_CONTEM_LOJA foreign key (ID_LOJA)
+      references LOJA (ID_LOJA);
+
+alter table VENDA
+   add constraint FK_VENDA_COMPRA_CLIENTE foreign key (ID_CLIENTE)
+      references CLIENTE (ID_CLIENTE);
+
+alter table VENDA
+   add constraint FK_VENDA_REALIZAM_TRABALHA foreign key (ID_FUNC)
+      references TRABALHADORES (ID_FUNC);
+
