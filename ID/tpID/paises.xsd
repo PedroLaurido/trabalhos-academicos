@@ -1,0 +1,21 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="lista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="pais" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_ISO" type="xs:string"/>
+              <xs:element name="continente" type="xs:string"/>
+              <xs:element name="nome_governante" type="xs:string"/>
+              <xs:element name="link_imagem" type="xs:anyURI"/>
+            </xs:sequence>
+            <xs:attribute name="nome" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

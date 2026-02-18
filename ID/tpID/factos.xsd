@@ -1,0 +1,39 @@
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="lista">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="factos" maxOccurs="unbounded">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="codigo_ISO" type="xs:string"/>
+              <xs:element name="capital" type="xs:string"/>
+              <xs:element name="moeda" type="xs:string"/>
+              <xs:element name="dominio" type="xs:string"/>
+              <xs:element name="populacao" type="xs:string"/>
+              <xs:element name="area" type="xs:string"/>
+              <xs:element name="crescimentoPop" type="xs:string"/>
+              <xs:element name="cidadesPopulosas">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="cidade" type="xs:string" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+              <xs:element name="idiomas" type="xs:string"/>
+              <xs:element name="paisesVizinhos">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="vizinho" type="xs:string" maxOccurs="unbounded"/>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute name="nome" type="xs:string" use="required"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+
+</xs:schema>

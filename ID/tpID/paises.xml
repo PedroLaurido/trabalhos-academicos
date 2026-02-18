@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE lista SYSTEM "paises.dtd">
+<lista xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="paises.xsd">
+     <pais nome="Germany">
+          <codigo_ISO>DE</codigo_ISO>
+          <continente>Europe</continente>
+          <nome_governante>Frank-Walter Steinmeier</nome_governante>
+          <link_imagem>https://upload.wikimedia.org/wikipedia/en/thumb/b/ba/Flag_of_Germany.svg/1200px-Flag_of_Germany.svg.png</link_imagem>
+     </pais>
+     <pais nome="Italy">
+          <codigo_ISO>IT</codigo_ISO>
+          <continente>Europe</continente>
+          <nome_governante>Sergio Mattarella</nome_governante>
+          <link_imagem>https://upload.wikimedia.org/wikipedia/en/thumb/0/03/Flag_of_Italy.svg/1200px-Flag_of_Italy.svg.png</link_imagem>
+     </pais>
+     <pais nome="Russia">
+          <codigo_ISO>RU</codigo_ISO>
+          <continente>Asia</continente>
+          <nome_governante>Vladimir Putin</nome_governante>
+          <link_imagem>https://upload.wikimedia.org/wikipedia/en/thumb/f/f3/Flag_of_Russia.svg/1200px-Flag_of_Russia.svg.png</link_imagem>
+     </pais>
+     <pais nome="Australia">
+          <codigo_ISO>AU</codigo_ISO>
+          <continente>Oceania</continente>
+          <nome_governante>Charles III</nome_governante>
+          <link_imagem>https://upload.wikimedia.org/wikipedia/commons/thumb/8/88/Flag_of_Australia_%28converted%29.svg/1200px-Flag_of_Australia_%28converted%29.svg.png</link_imagem>
+     </pais>
+     <pais nome="Portugal">
+          <codigo_ISO>PT</codigo_ISO>
+          <continente>Europe</continente>
+          <nome_governante>Marcelo Rebelo de Sousa</nome_governante>
+          <link_imagem>https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Flag_of_Portugal.svg/1200px-Flag_of_Portugal.svg.png</link_imagem>
+     </pais>
+</lista>

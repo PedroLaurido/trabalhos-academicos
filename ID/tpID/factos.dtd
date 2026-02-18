@@ -1,0 +1,18 @@
+<!ELEMENT lista (factos+)>
+<!ATTLIST lista
+          xmlns:xsi CDATA #IMPLIED
+          xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+<!ELEMENT factos (codigo_ISO, capital, moeda, dominio, populacao, area, crescimentoPop, cidadesPopulosas, idiomas, paisesVizinhos)>
+<!ATTLIST factos nome CDATA #REQUIRED>
+<!ELEMENT codigo_ISO (#PCDATA)>
+<!ELEMENT capital (#PCDATA)>
+<!ELEMENT moeda (#PCDATA)>
+<!ELEMENT dominio (#PCDATA)>
+<!ELEMENT populacao (#PCDATA)>
+<!ELEMENT area (#PCDATA)>
+<!ELEMENT crescimentoPop (#PCDATA)>
+<!ELEMENT cidadesPopulosas (cidade+)>
+<!ELEMENT cidade (#PCDATA)>
+<!ELEMENT idiomas (#PCDATA)>
+<!ELEMENT paisesVizinhos (vizinho+)>
+<!ELEMENT vizinho (#PCDATA)>

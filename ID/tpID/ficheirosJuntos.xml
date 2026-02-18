@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<lista>
+   <pais nome="">
+      <codigo_ISO>PT</codigo_ISO>
+      <continente>Europe</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+   <pais nome="">
+      <codigo_ISO>ES</codigo_ISO>
+      <continente>Europe</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+   <pais nome="">
+      <codigo_ISO>DE</codigo_ISO>
+      <continente>Europe</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+   <pais nome="">
+      <codigo_ISO>IT</codigo_ISO>
+      <continente>Europe</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+   <pais nome="">
+      <codigo_ISO>RU</codigo_ISO>
+      <continente>Asia</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+   <pais nome="">
+      <codigo_ISO>AU</codigo_ISO>
+      <continente>Oceania</continente>
+      <nome_governante/>
+      <link_imagem/>
+      <capital/>
+      <moeda/>
+      <dominio/>
+      <populacao/>
+      <area/>
+      <crescimentoPop/>
+      <cidadesPopulosas/>
+      <idiomas/>
+      <paisesVizinhos/>
+   </pais>
+</lista>

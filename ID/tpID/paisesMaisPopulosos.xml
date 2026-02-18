@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="utf-8"?>
+<top5_paises>
+     <factos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Russia">
+          <codigo_ISO>RU</codigo_ISO>
+          <capital>Moscow</capital>
+          <moeda>Ruble</moeda>
+          <dominio />
+          <populacao>141722205</populacao>
+          <area>098,242</area>
+          <crescimentoPop>0.02</crescimentoPop>
+          <cidadesPopulosas>
+               <cidade>Moscow</cidade>
+               <cidade>Saint Petersburg</cidade>
+               <cidade>Novosibirsk</cidade>
+               <cidade>Yekaterinburg</cidade>
+               <cidade>Kazan</cidade>
+          </cidadesPopulosas>
+          <idiomas>Russian</idiomas>
+          <paisesVizinhos>
+               <vizinho>Azerbaijan 284 km, Belarus 959 km, China (southeast) 3,605 km, China (south) 40 km, Estonia 290 km, Finland 1,313 km, Georgia 723 km, Kazakhstan 6,846 km, North Korea 17.5 km, Latvia 292 km, Lithuania (Kaliningrad Oblast) 227 km, Mongolia 3,441 km, Norway 196 km, Poland (Kaliningrad Oblast) 432 km, Ukraine 1,576 km</vizinho>
+          </paisesVizinhos>
+     </factos>
+     <factos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Germany">
+          <codigo_ISO>DE</codigo_ISO>
+          <capital>Berlin</capital>
+          <moeda>Euro</moeda>
+          <dominio>.de</dominio>
+          <populacao>80159662</populacao>
+          <area>357,022</area>
+          <crescimentoPop>0.19</crescimentoPop>
+          <cidadesPopulosas>
+               <cidade>Berlin</cidade>
+               <cidade>Hamburg</cidade>
+               <cidade>Munich</cidade>
+               <cidade>Cologne</cidade>
+               <cidade>Frankfurt</cidade>
+          </cidadesPopulosas>
+          <idiomas>German</idiomas>
+          <paisesVizinhos>
+               <vizinho>Austria 784 km, Belgium 167 km, Czech Republic 815 km, Denmark 68 km, France 451 km, Luxembourg 138 km, Netherlands 577 km, Poland 456 km, Switzerland 334 km</vizinho>
+          </paisesVizinhos>
+     </factos>
+     <factos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Italy">
+          <codigo_ISO>IT</codigo_ISO>
+          <capital>Rome</capital>
+          <moeda>Euro</moeda>
+          <dominio>.it</dominio>
+          <populacao>62402659</populacao>
+          <area>301,340</area>
+          <crescimentoPop>0.34</crescimentoPop>
+          <cidadesPopulosas>
+               <cidade>Rome</cidade>
+               <cidade>Milan</cidade>
+               <cidade>Naples</cidade>
+               <cidade>Turin</cidade>
+               <cidade>Palermo</cidade>
+          </cidadesPopulosas>
+          <idiomas>Italian</idiomas>
+          <paisesVizinhos>
+               <vizinho>Austria 430 km, France 488 km, Holy See (Vatican City) 3.2 km, San Marino 39 km, Slovenia 199 km, Switzerland 740 km</vizinho>
+          </paisesVizinhos>
+     </factos>
+     <factos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Spain">
+          <codigo_ISO>ES</codigo_ISO>
+          <capital>Madrid</capital>
+          <moeda>Euro</moeda>
+          <dominio>.es</dominio>
+          <populacao>50015792</populacao>
+          <area>505,370</area>
+          <crescimentoPop>0.73</crescimentoPop>
+          <cidadesPopulosas>
+               <cidade>Madrid</cidade>
+               <cidade>Barcelona</cidade>
+               <cidade>Valencia</cidade>
+               <cidade>Seville</cidade>
+               <cidade>Zaragoza</cidade>
+          </cidadesPopulosas>
+          <idiomas>Spanish</idiomas>
+          <paisesVizinhos>
+               <vizinho>Andorra 63.7 km, France 623 km, Gibraltar 1.2 km, Portugal 1,214 km, Morocco (Ceuta) 6.3 km, Morocco (Melilla) 9.6 km</vizinho>
+          </paisesVizinhos>
+     </factos>
+     <factos xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" nome="Australia">
+          <codigo_ISO>AU</codigo_ISO>
+          <capital>Canberra</capital>
+          <moeda>Australian dollar</moeda>
+          <dominio>.au</dominio>
+          <populacao>25466459</populacao>
+          <area>741,220</area>
+          <crescimentoPop>1.11</crescimentoPop>
+          <cidadesPopulosas>
+               <cidade>Sydney</cidade>
+               <cidade>Melbourne</cidade>
+               <cidade>Brisbane</cidade>
+               <cidade>Perth</cidade>
+               <cidade>Adelaide</cidade>
+          </cidadesPopulosas>
+          <idiomas />
+          <paisesVizinhos />
+     </factos>
+</top5_paises>

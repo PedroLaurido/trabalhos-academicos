@@ -1,0 +1,10 @@
+<!ELEMENT lista (pais+)>
+<!ATTLIST lista
+          xmlns:xsi CDATA #IMPLIED
+          xsi:noNamespaceSchemaLocation CDATA #IMPLIED>
+<!ELEMENT pais (codigo_ISO, continente, nome_governante, link_imagem)>
+<!ATTLIST pais nome CDATA #REQUIRED>
+<!ELEMENT codigo_ISO (#PCDATA)>
+<!ELEMENT continente (#PCDATA)>
+<!ELEMENT nome_governante (#PCDATA)>
+<!ELEMENT link_imagem (#PCDATA)>
